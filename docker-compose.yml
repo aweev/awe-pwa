@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15 # Use a specific postgres version
+    container_name: awe-db
+    restart: always
+    environment:
+      POSTGRES_USER: awe
+      POSTGRES_PASSWORD: awedatabase
+      POSTGRES_DB: awe
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    container_name: awe-redis
+    restart: always
+    ports:
+      - '6379:6379'
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+
+volumes:
+  postgres_data:
+  redis_data:

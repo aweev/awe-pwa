@@ -1,0 +1,355 @@
+{
+  "auth": {
+    "login": { "title": "Bei AWE anmelden", "submit": "Weiter", "oauth": "Oder weiter mit" },
+    "signup": { "title": "Konto erstellen", "gdpr": "Ich stimme der <0>Datenschutzrichtlinie</0> zu" },
+    "onboarding": {
+      "step1": { "title": "Persönliche Informationen", "subtitle": "Lernen wir Sie kennen" },
+      "step2": { "title": "Beruflicher Hintergrund", "subtitle": "Helfen Sie uns, Möglichkeiten zu finden" },
+      "step3": { "title": "Präferenzen", "subtitle": "Steuern Sie Ihre Privatsphäre & Benachrichtigungen" },
+      "done": { "title": "Alles erledigt!", "cta": "Zum Dashboard" }
+    }
+  },
+  "PublicHeader": {
+    "brandName": "AWE e.V.",
+    "nav": {
+      "about": "Über uns",
+      "programs": "Programme",
+      "ourWork": "Unsere Arbeit",
+      "impact": "Wirkung",
+      "getInvolved": "Mitmachen",
+      "news": "Nachrichten",
+      "contact": "Kontakt",
+      "openMenu": "Menü öffnen",
+      "toggleMenu": "Menü umschalten",
+      "mobileTitle": "Navigationsmenü"
+    },
+    "programs": {
+      "economic": {
+        "title": "Wirtschaftliche Stärkung",
+        "description": "Unterstützung von Flüchtlingen und Vertriebenen beim Aufbau nachhaltiger Existenzgrundlagen durch Qualifikationstraining, Mikrofinanzierung und Unternehmertumsprogramme."
+      },
+      "education": {
+        "title": "Bildung & Jugend",
+        "description": "Bereitstellung von Bildungsmöglichkeiten und Jugendentwicklungsprogrammen, um den Kreislauf der Armut zu durchbrechen und Erfolgswege zu schaffen."
+      },
+      "health": {
+        "title": "Gesundheit & Wohlbefinden",
+        "description": "Sicherstellung des Zugangs zu Gesundheitsversorgung, psychischer Gesundheitsunterstützung und Wellnessprogrammen für gefährdete Gemeinschaften."
+      },
+      "social": {
+        "title": "Soziale Integration",
+        "description": "Förderung der Gemeinschaftsintegration, des kulturellen Austauschs und der sozialen Kohäsionsprogramme zum Aufbau inklusiver Gesellschaften."
+      }
+    },
+    "cta": {
+      "volunteer": "Freiwilliger werden",
+      "donate": "Spenden",
+      "memberLogin": "Anmelden"
+    }
+  },
+  "LanguageSwitcher": {
+    "changeLanguage": "Sprache ändern",
+    "currentLanguage": "Aktuelle Sprache"
+  },
+  "ThemeToggle": {
+    "toggleTheme": "Design wechseln",
+    "light": "Hell",
+    "dark": "Dunkel",
+    "system": "System"
+  },
+  "PublicFooter": {
+    "brandName": "AWE e.V.",
+    "tagline": "Verwandlung von Armuts- und Vertreibungskreisläufen in Wege der Würde, Eigenständigkeit und dauerhaften Wohlstands.",
+    "followUs": "Folgen Sie uns",
+    "rightsReserved": "Alle Rechte vorbehalten.",
+    "motto": "Gemeinsam Zukunft gestalten",
+    "sections": {
+      "about": {
+        "title": "Über uns",
+        "story": "Unsere Geschichte",
+        "team": "Unser Team",
+        "approach": "Unser Ansatz"
+      },
+      "getInvolved": {
+        "title": "Mitmachen",
+        "donate": "Spenden",
+        "volunteer": "Freiwilliger werden",
+        "partner": "Partner werden"
+      },
+      "legal": {
+        "title": "Rechtliches",
+        "privacy": "Datenschutzerklärung",
+        "terms": "Nutzungsbedingungen",
+        "contact": "Kontakt"
+      }
+    }
+  },
+  "AuthLayout": {
+    "privacyPolicy": "Datenschutzerklärung",
+    "contactSupport": "Support kontaktieren",
+    "copyright": "© {year} AWE e.V. Alle Rechte vorbehalten."
+  },
+  "LoginPage": {
+    "title": "Willkommen zurück im Portal",
+    "subtitle": "Bereit, einen Unterschied zu machen?",
+    "signUpLink": "Konto erstellen",
+    "separator": "Oder mit E-Mail anmelden",
+    "emailLabel": "E-Mail-Adresse",
+    "emailPlaceholder": "du@beispiel.de",
+    "passwordLabel": "Passwort",
+    "forgotPasswordLink": "Passwort vergessen?",
+    "loginButton": "Anmelden",
+    "processingButton": "Anmeldung läuft...",
+    "mfa": {
+      "title": "Zwei-Faktor-Authentifizierung",
+      "subtitle": "Geben Sie den Code aus Ihrer Authenticator-App ein.",
+      "codeLabel": "Bestätigungscode",
+      "verifyButton": "Bestätigen & Anmelden",
+      "verifyingButton": "Überprüfe..."
+    },
+    "error": {
+        "title": "Anmeldung fehlgeschlagen",
+        "invalidCredentials": "Die eingegebene E-Mail-Adresse oder das Passwort ist falsch. Bitte versuchen Sie es erneut."
+    }
+  },
+  "RegisterPage": {
+    "title": "Erstellen Sie Ihr Konto",
+    "subtitle": "Werden Sie Teil unserer Gemeinschaft von Gestaltern.",
+    "loginLink": "Stattdessen anmelden",
+    "separator": "Oder mit E-Mail registrieren",
+    "firstNameLabel": "Vorname",
+    "firstNamePlaceholder": "Maria",
+    "lastNameLabel": "Nachname",
+    "lastNamePlaceholder": "Musterfrau",
+    "emailLabel": "E-Mail-Adresse",
+    "emailPlaceholder": "du@beispiel.de",
+    "passwordLabel": "Passwort",
+    "confirmPasswordLabel": "Passwort bestätigen",
+    "termsLabel": "Ich stimme den",
+    "termsLink": "Nutzungsbedingungen zu",
+    "signUpButton": "Konto erstellen",
+    "processingButton": "Konto wird erstellt...",
+    "oauth": {
+      "google": "Weiter mit Google",
+      "facebook": "Weiter mit Facebook"
+    },
+    "success": {
+      "title": "Fast geschafft!",
+      "message": "Wir haben einen Bestätigungslink an Ihre E-Mail-Adresse gesendet. Bitte klicken Sie auf den Link, um Ihr Konto zu aktivieren.",
+      "loginButton": "Zurück zum Login"
+    },
+    "error": {
+      "title": "Registrierung fehlgeschlagen",
+      "default": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
+    }
+  },
+  "PasswordResetRequestPage": {
+    "title": "Passwort vergessen?",
+    "subtitle": "Kein Problem. Geben Sie Ihre E-Mail-Adresse ein und wir senden Ihnen einen Link zum Zurücksetzen.",
+    "emailLabel": "E-Mail-Adresse",
+    "emailPlaceholder": "du@beispiel.de",
+    "submitButton": "Link zum Zurücksetzen senden",
+    "processingButton": "Wird gesendet...",
+    "success": {
+      "title": "Überprüfen Sie Ihre E-Mails",
+      "message": "Wenn ein Konto mit dieser E-Mail existiert, haben wir einen Link zum Zurücksetzen des Passworts dorthin gesendet.",
+      "backToLogin": "Zurück zum Login"
+    }
+  },
+  "PasswordResetConfirmPage": {
+    "title": "Neues Passwort festlegen",
+    "subtitle": "Erstellen Sie ein starkes, neues Passwort für Ihr Konto.",
+    "passwordLabel": "Neues Passwort",
+    "confirmPasswordLabel": "Neues Passwort bestätigen",
+    "submitButton": "Passwort zurücksetzen",
+    "processingButton": "Wird zurückgesetzt...",
+    "success": {
+      "title": "Passwort zurückgesetzt!",
+      "message": "Ihr Passwort wurde erfolgreich aktualisiert. Sie können sich jetzt anmelden.",
+      "loginButton": "Zum Login"
+    },
+    "error": {
+      "title": "Zurücksetzen fehlgeschlagen",
+      "invalidToken": "Dieser Link zum Zurücksetzen des Passworts ist ungültig oder abgelaufen. Bitte fordern Sie einen neuen an."
+    }
+  },
+  "VerifyPage": {
+    "verifying": {
+      "title": "Ihr Konto wird verifiziert",
+      "message": "Bitte warten Sie einen Moment, während wir Ihre E-Mail-Adresse bestätigen."
+    },
+    "success": {
+      "title": "E-Mail verifiziert!",
+      "message": "Ihr Konto wurde erfolgreich verifiziert. Sie können sich jetzt anmelden.",
+      "loginButton": "Zum Login"
+    },
+    "error": {
+      "title": "Verifizierung fehlgeschlagen",
+      "message": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder fordern Sie einen neuen Link an.",
+      "backToLogin": "Zurück zum Login",
+      "missingToken": "Es wurde kein Verifizierungstoken bereitgestellt. Bitte überprüfen Sie den Link aus Ihrer E-Mail.",
+      "default": "Der Verifizierungslink ist ungültig oder abgelaufen. Bitte versuchen Sie, sich erneut zu registrieren oder kontaktieren Sie den Support."
+    }
+  },
+   "OnboardingPage": {
+    "preferences": {
+      "title": "Wie sollen wir in Kontakt bleiben?",
+      "description": "Wählen Sie die Mitteilungen aus, die Sie von uns erhalten möchten. Sie können diese Einstellungen jederzeit in Ihrem Profil ändern.",
+      "newsletterLabel": "Monatlicher Newsletter",
+      "newsletterDescription": "Erhalten Sie unsere monatliche Zusammenfassung mit Community-Geschichten und Wirkungsberichten.",
+      "projectUpdatesLabel": "Benachrichtigungen über neue Projekte",
+      "projectUpdatesDescription": "Werden Sie benachrichtigt, wenn neue Freiwilligenmöglichkeiten verfügbar sind, die Ihren Interessen entsprechen.",
+      "eventInvitationsLabel": "Einladungen zu Community-Events",
+      "eventInvitationsDescription": "Erfahren Sie als Erster von lokalen Treffen, Workshops und Online-Veranstaltungen.",
+      "button": "Einstellungen speichern",
+      "skipButton": "Vorerst überspringen"
+    },
+    "privacy": {
+      "title": "Ihre Privatsphäre ist uns wichtig",
+      "description": "Wir verpflichten uns, Ihre persönlichen Daten zu schützen. Bitte lesen und akzeptieren Sie unsere Datenschutzrichtlinie, um fortzufahren.",
+      "consentLabel": "Ich habe die",
+      "privacyPolicyLink": "Datenschutzrichtlinie",
+      "button": "Zustimmen und Einrichtung abschließen"
+    }
+  },
+  "MembersHeader": {
+    "toggleNavigation": "Navigationsmenü umschalten",
+    "toggleUserMenu": "Benutzermenü umschalten",
+    "searchPlaceholder": "Ressourcen suchen...",
+    "myAccount": "Mein Konto",
+    "settings": "Einstellungen", 
+    "support": "Support",
+    "logout": "Abmelden"
+  },
+  "MembersSidebar": {
+    "brandName": "AWE Portal",
+    "nav": {
+      "dashboard": "Dashboard", 
+      "myImpact": "Meine Wirkung",
+      "resources": "Ressourcen",
+      "community": "Gemeinschaft"
+    }
+  },
+  "AdminHeader": {
+    "toggleNavigation": "Navigationsmenü umschalten",
+    "toggleUserMenu": "Benutzermenü umschalten",
+    "adminAccount": "Admin-Konto",
+    "settings": "Einstellungen",
+    "support": "Support", 
+    "logout": "Abmelden"
+  },
+  "AdminSidebar": {
+    "brandName": "AWE Admin",
+    "nav": {
+      "dashboard": "Dashboard",
+      "contentManagement": "Content-Verwaltung",
+      "userManagement": "Benutzerverwaltung", 
+      "partnerships": "Partnerschaften",
+      "analytics": "Analytik"
+    },
+    "settings": "Einstellungen"
+  },
+  "HomePage": {
+    "sectionTitles": {
+      "impact": "Unsere nachgewiesene Wirkung",
+      "differentiators": "Unser einzigartiger Ansatz",
+      "stories": "Geschichten der Veränderung",
+      "storiesSubtitle": "Erleben Sie die reale Wirkung unseres ganzheitlichen Ansatzes durch die Leben, die wir berühren.",
+      "involvement": "Wie Sie helfen können",
+      "newsletter": "Bleiben Sie auf dem Laufenden"
+    },
+    "hero": {
+      "headlinePrimary": "Zukunft gestalten",
+    "headlineAccent": "statt nur Hilfe zu leisten",
+      "subheadline": "Wir befähigen Frauen, Jugendliche und Kinder — insbesondere Geflüchtete und Vertriebene — durch Kompetenztraining, Bildung und ganzheitliche Unterstützung, die einen dauerhaften, würdevollen Wandel schaffen.",
+      "trustIndicator1": "Zertifizierte NGO",
+      "trustIndicator2": "Preisgekrönte Programme",
+      "primaryCta": "Jetzt spenden",
+      "secondaryCta": "Partner werden"
+    },
+    "impact": {
+      "stat1": {
+        "label": "Menschen gestärkt",
+        "outcome": "durch Schulungen und Unterstützung"
+      },
+      "stat2": {
+        "label": "Neue Unternehmen gegründet",
+        "outcome": "zur Förderung der wirtschaftlichen Unabhängigkeit"
+      },
+      "stat3": {
+        "label": "Gemeinschaftsprojekte gestartet",
+        "outcome": "um lokale Bedürfnisse direkt anzugehen"
+      },
+      "stat4": {
+        "label": "Programm-Abschlussquote",
+        "outcome": "als Beweis für langfristigen Erfolg"
+      }
+    },
+    "differentiators": {
+      "item1": {
+        "title": "Von der Gemeinschaft geführt",
+        "description": "Unsere Lösungen werden gemeinsam mit den Mitgliedern der Gemeinschaft entwickelt, um Relevanz und langfristige Eigenverantwortung zu gewährleisten."
+      },
+      "item2": {
+        "title": "Ganzheitliche Unterstützung",
+        "description": "Wir gehen auf vernetzte Bedürfnisse ein, von Bildung und Gesundheit bis hin zur wirtschaftlichen Stärkung."
+      },
+      "item3": {
+        "title": "Nachgewiesene Ergebnisse",
+        "description": "Unsere Methoden sind datengestützt und werden kontinuierlich für maximale, messbare Wirkung verfeinert."
+      },
+      "item4": {
+        "title": "Kulturelle Kompetenz",
+        "description": "Wir handeln mit tiefem Respekt und Verständnis für lokale Kulturen und bauen so Vertrauen und effektive Partnerschaften auf."
+      }
+    },
+    "involvement": {
+      "option1": {
+        "title": "Spenden",
+        "description": "Ihr Beitrag finanziert direkt unsere Programme und stellt wesentliche Ressourcen und Schulungen bereit.",
+        "cta": "Heute spenden"
+      },
+      "option2": {
+        "title": "Partner werden",
+        "description": "Arbeiten Sie mit uns zusammen, um unsere Wirkung zu skalieren und nachhaltige, systemische Veränderungen zu schaffen.",
+        "cta": "Partner werden"
+      },
+      "option3": {
+        "title": "Ehrenamtlich",
+        "description": "Bringen Sie Ihre Fähigkeiten und Ihre Zeit ein, um das Leben unserer Teilnehmer spürbar zu verbessern.",
+        "cta": "Werden Sie Teil des Teams"
+      }
+    },
+    "stories": {
+      "readStory": "Geschichte lesen",
+      "viewAll": "Alle Geschichten ansehen"
+    },
+    "newsletter": {
+      "subtitle": "Werden Sie Teil unserer Community und erhalten Sie Updates über unsere Arbeit und Erfolgsgeschichten.",
+      "placeholder": "Ihre E-Mail-Adresse",
+      "subscribe": "Abonnieren"
+    }
+  },
+  "NotFound": {
+    "title": "Seite nicht gefunden",
+    "description": "Entschuldigung, wir konnten die gesuchte Seite nicht finden.",
+    "homeButton": "Zur Startseite"
+  },
+  "Metadata": {
+    "title": "AWE e.V. | Zukunft gestalten",
+    "description": "Wir verwandeln Teufelskreise von Armut und Vertreibung in Wege zu Würde, Eigenständigkeit und dauerhaftem Wohlstand."
+  },
+  "welcome": {
+    "subject": "Willkommen bei AWE e.V.!",
+    "title": "Hallo {{name}}, willkommen bei AWE e.V.",
+    "body": "Vielen Dank, dass Sie Teil unserer Gemeinschaft geworden sind. Vervollständigen Sie Ihr Profil, um von Ihrer Mitgliedschaft optimal zu profitieren.",
+    "cta": "Profil vervollständigen"
+  },
+  "donation": {
+    "subject": "Vielen Dank für Ihre großzügige Spende!",
+    "title": "Hallo {{name}}",
+    "body1": "Wir haben Ihre Spende über {{amount}} erhalten.",
+    "body2": "Ihre Unterstützung hilft uns, unsere Mission fortzusetzen. Sie erhalten in Kürze eine formelle Spendenquittung.",
+    "receiptNotice": "Eine steuerlich abzugsfähige Quittung erhalten Sie in einer separaten E-Mail."
+  }
+}

@@ -1,0 +1,622 @@
+{
+  "auth": {
+    "login": { "title": "Sign in to AWE", "submit": "Continue", "oauth": "Or continue with" },
+    "signup": { "title": "Create your account", "gdpr": "I agree to the <0>privacy policy</0>" },
+    "onboarding": {
+      "step1": { "title": "Personal info", "subtitle": "Let's get to know you" },
+      "step2": { "title": "Professional background", "subtitle": "Help us match opportunities" },
+      "step3": { "title": "Preferences", "subtitle": "Control your privacy & notifications" },
+      "done": { "title": "You're all set!", "cta": "Go to dashboard" }
+    }
+  },
+  "PublicHeader": {
+    "brandName": "AWE e.V.",
+    "nav": {
+      "about": "About",
+      "programs": "Programs",
+      "ourWork": "Our Work",
+      "impact": "Impact",
+      "getInvolved": "Get Involved",
+      "news": "News",
+      "contact": "Contact",
+      "openMenu": "Open menu",
+      "toggleMenu": "Toggle menu",
+      "mobileTitle": "Navigation Menu"
+    },
+    "programs": {
+      "economic": {
+        "title": "Economic Empowerment",
+        "description": "Supporting refugees and displaced persons in building sustainable livelihoods through skills training, microfinance, and entrepreneurship programs."
+      },
+      "education": {
+        "title": "Education & Youth",
+        "description": "Providing educational opportunities and youth development programs to break the cycle of poverty and create pathways to success."
+      },
+      "health": {
+        "title": "Health & Wellness",
+        "description": "Ensuring access to healthcare, mental health support, and wellness programs for vulnerable communities."
+      },
+      "social": {
+        "title": "Social Integration",
+        "description": "Facilitating community integration, cultural exchange, and social cohesion programs to build inclusive societies."
+      }
+    },
+    "cta": {
+      "volunteer": "Volunteer",
+      "donate": "Donate",
+      "memberLogin": "Login"
+    }
+  },
+  "LanguageSwitcher": {
+    "changeLanguage": "Change language",
+    "currentLanguage": "Current language"
+  },
+  "ThemeToggle": {
+    "toggleTheme": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "PublicFooter": {
+    "brandName": "AWE e.V.",
+    "tagline": "Transforming cycles of poverty and displacement into pathways of dignity, self-reliance, and lasting prosperity.",
+    "followUs": "Follow Us",
+    "rightsReserved": "All rights reserved.",
+    "motto": "Building Futures Together",
+    "sections": {
+      "about": {
+        "title": "About",
+        "story": "Our Story",
+        "team": "Our Team",
+        "approach": "Our Approach"
+      },
+      "getInvolved": {
+        "title": "Get Involved",
+        "donate": "Donate",
+        "volunteer": "Volunteer",
+        "partner": "Partner with Us"
+      },
+      "legal": {
+        "title": "Legal",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service",
+        "contact": "Contact"
+      }
+    }
+  },
+  "AuthLayout": {
+    "privacyPolicy": "Privacy Policy",
+    "contactSupport": "Contact Support",
+    "copyright": "© {year} AWE e.V. All rights reserved."
+  },
+  "LoginPage": {
+    "title": "Welcome Back to the Portal",
+    "subtitle": "Ready to make a difference?",
+    "signUpLink": "Create an account",
+    "separator": "Or sign in with email",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Password",
+    "forgotPasswordLink": "Forgot password?",
+    "loginButton": "Sign In",
+    "processingButton": "Signing In...",
+    "mfa": {
+      "title": "Two-Factor Authentication",
+      "subtitle": "Enter the code from your authenticator app.",
+      "codeLabel": "Verification Code",
+      "verifyButton": "Verify & Sign In",
+      "verifyingButton": "Verifying..."
+    },
+    "error": {
+        "title": "Login Failed",
+        "invalidCredentials": "The email or password you entered is incorrect. Please try again."
+    }
+  },
+  "RegisterPage": {
+    "title": "Create Your Account",
+    "subtitle": "Join our community of change-makers.",
+    "loginLink": "Sign in instead",
+    "separator": "Or sign up with email",
+    "firstNameLabel": "First Name",
+    "firstNamePlaceholder": "Jane",
+    "lastNameLabel": "Last Name",
+    "lastNamePlaceholder": "Doe",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Password",
+    "confirmPasswordLabel": "Confirm Password",
+    "termsLabel": "I agree to the",
+    "termsLink": "Terms of Service",
+    "signUpButton": "Create Account",
+    "processingButton": "Creating Account...",
+    "oauth": {
+      "google": "Continue with Google",
+      "facebook": "Continue with Facebook"
+    },
+    "success": {
+      "title": "Almost there!",
+      "message": "We've sent a verification link to your email address. Please click the link to activate your account.",
+      "loginButton": "Back to Login"
+    },
+    "error": {
+      "title": "Registration Failed",
+      "default": "An unexpected error occurred. Please try again."
+    }
+  },
+  "PasswordResetRequestPage": {
+    "title": "Forgot Your Password?",
+    "subtitle": "No problem. Enter your email below and we'll send you a reset link.",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "submitButton": "Send Reset Link",
+    "processingButton": "Sending...",
+    "success": {
+      "title": "Check Your Email",
+      "message": "If an account with that email exists, we have sent a password reset link to it.",
+      "backToLogin": "Back to Login"
+    }
+  },
+  "PasswordResetConfirmPage": {
+    "title": "Set a New Password",
+    "subtitle": "Create a strong, new password for your account.",
+    "passwordLabel": "New Password",
+    "confirmPasswordLabel": "Confirm New Password",
+    "submitButton": "Reset Password",
+    "processingButton": "Resetting...",
+    "success": {
+      "title": "Password Reset!",
+      "message": "Your password has been successfully updated. You can now log in.",
+      "loginButton": "Go to Login"
+    },
+    "error": {
+      "title": "Reset Failed",
+      "invalidToken": "This password reset link is invalid or has expired. Please request a new one."
+    }
+  },
+  "VerifyPage": {
+    "verifying": {
+      "title": "Verifying Your Account",
+      "message": "Please wait a moment while we confirm your email address."
+    },
+    "success": {
+      "title": "Email Verified!",
+      "message": "Your account has been successfully verified. You can now log in.",
+      "loginButton": "Go to Login"
+    },
+    "error": {
+      "title": "Verification Failed",
+      "message": "Something went wrong. Please try again or request a new link.",
+      "backToLogin": "Back to Login",
+      "missingToken": "No verification token was provided. Please check the link from your email.",
+      "default": "The verification link is invalid or has expired. Please try registering again or contact support."
+    }
+  },
+  "OnboardingPage": {
+    "preferences": {
+      "title": "How should we keep in touch?",
+      "description": "Choose the communications you'd like to receive from us. You can change these settings at any time in your profile.",
+      "newsletterLabel": "Monthly Newsletter",
+      "newsletterDescription": "Receive our monthly digest with community stories and impact reports.",
+      "projectUpdatesLabel": "New Project Alerts",
+      "projectUpdatesDescription": "Get notified when new volunteer opportunities matching your interests are available.",
+      "eventInvitationsLabel": "Community Event Invitations",
+      "eventInvitationsDescription": "Be the first to know about local meetups, workshops, and online events.",
+      "button": "Save Preferences",
+      "skipButton": "Skip for now"
+    },
+    "privacy": {
+      "title": "Your Privacy Matters",
+      "description": "We are committed to protecting your personal information. Please review and agree to our data policy to proceed.",
+      "consentLabel": "I have read and agree to the AWE e.V.",
+      "privacyPolicyLink": "Privacy Policy",
+      "button": "Agree and Finish Setup"
+    }
+  },
+  "MembersHeader": {
+    "toggleNavigation": "Toggle navigation menu",
+    "toggleUserMenu": "Toggle user menu",
+    "searchPlaceholder": "Search resources...",
+    "myAccount": "My Account",
+    "settings": "Settings",
+    "support": "Support",
+    "logout": "Logout"
+  },
+  "MembersSidebar": {
+    "brandName": "AWE Portal",
+    "nav": {
+      "dashboard": "Dashboard",
+      "myImpact": "My Impact",
+      "resources": "Resources",
+      "community": "Community"
+    }
+  },
+  "AdminHeader": {
+    "toggleNavigation": "Toggle navigation menu",
+    "toggleUserMenu": "Toggle user menu",
+    "adminAccount": "Admin Account",
+    "settings": "Settings",
+    "support": "Support",
+    "logout": "Logout"
+  },
+  "AdminSidebar": {
+    "brandName": "AWE Admin",
+    "nav": {
+      "dashboard": "Dashboard",
+      "contentManagement": "Content Management",
+      "userManagement": "User Management",
+      "partnerships": "Partnerships",
+      "analytics": "Analytics"
+    },
+    "settings": "Settings"
+  },
+  "HomePage": {
+    "sectionTitles": {
+      "impact": "Our Proven Impact",
+      "differentiators": "Our Unique Approach",
+      "stories": "Stories of Change",
+      "storiesSubtitle": "See the real-world impact of our holistic approach through the lives we touch.",
+      "involvement": "How You Can Help",
+      "newsletter": "Stay Connected"
+    },
+    "hero": {
+      "headlinePrimary": "Building Futures",
+      "headlineAccent": "Not Just Providing Aid",
+      "subheadline": "We empower women, youth, and children—especially refugees and displaced communities—through skills training, education, and holistic support that creates lasting, dignified change.",
+      "trustIndicator1": "Certified NGO",
+      "trustIndicator2": "Award-Winning Programs",
+      "primaryCta": "Donate Now",
+      "secondaryCta": "Partner With Us",
+      "testimonials": {
+        "en": [
+          {
+            "text": "AWE transformed our entire community",
+            "author": "Maria Santos",
+            "location": "Kenya",
+            "program": "Women's Empowerment"
+          },
+          {
+            "text": "Hope restored in our village",
+            "author": "John Kamau",
+            "location": "Uganda",
+            "program": "Youth Leadership"
+          },
+          {
+            "text": "Education changed everything",
+            "author": "Fatima Al-Rashid",
+            "location": "Jordan",
+            "program": "Child Education"
+          }
+        ]
+      }
+    },
+    "impact": {
+      "title": "Our Proven Impact",
+      "subtitle": "Our data-driven approach ensures measurable, lasting impact in the communities we serve. Every number represents real lives transformed and futures reimagined.",
+      "ctaSection": {
+        "title": "Every Number Tells a Story",
+        "description": "Behind each statistic is a person whose life has been transformed through our holistic approach. Join us in creating more success stories and building stronger communities together.",
+        "primaryCta": "Be Part of Our Impact",
+        "secondaryCta": "View Detailed Reports"
+      },
+      "stat1": {
+        "label": "Individuals Empowered",
+        "outcome": "through skills training and support"
+      },
+      "stat2": {
+        "label": "New Businesses Started",
+        "outcome": "fostering economic independence"
+      },
+      "stat3": {
+        "label": "Community Projects Launched",
+        "outcome": "addressing local needs directly"
+      },
+      "stat4": {
+        "label": "Program Graduation Rate",
+        "outcome": "demonstrating long-term success"
+      }
+    },
+    "differentiators": {
+      "item1": {
+        "title": "Community-Led",
+        "description": "Our solutions are co-designed with community members to ensure relevance and long-term ownership."
+      },
+      "item2": {
+        "title": "Holistic Support",
+        "description": "We address interconnected needs, from education and health to economic empowerment."
+      },
+      "item3": {
+        "title": "Proven Results",
+        "description": "Our methods are data-driven and continuously refined for maximum, measurable impact."
+      },
+      "item4": {
+        "title": "Cultural Competency",
+        "description": "We operate with deep respect and understanding for local cultures, building trust and effective partnerships."
+      }
+    },
+    "involvement": {
+      "option1": {
+        "title": "Donate",
+        "description": "Your contribution directly funds our programs, providing essential resources and training.",
+        "cta": "Give Today"
+      },
+      "option2": {
+        "title": "Partner",
+        "description": "Collaborate with us to scale our impact and create sustainable, systemic change.",
+        "cta": "Become a Partner"
+      },
+      "option3": {
+        "title": "Volunteer",
+        "description": "Lend your skills and time to make a tangible difference in the lives of our participants.",
+        "cta": "Join Our Team"
+      }
+    },
+    "stories": {
+      "readStory": "Read Story",
+      "viewAll": "View All Stories of Change"
+    },
+    "newsletter": {
+      "subtitle": "Join our community and receive updates on our impact and stories of change.",
+      "placeholder": "Enter your email",
+      "subscribe": "Subscribe"
+    }
+  },
+  "NotFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, we couldn't find the page you're looking for.",
+    "homeButton": "Go Back Home"
+  },
+  "Metadata": {
+    "title": "AWE e.V. | Building Futures",
+    "description": "Transforming cycles of poverty and displacement into pathways of dignity, self-reliance, and lasting prosperity."
+  },
+  "BrandConfig": {
+    "loadingBrand": "Loading brand configuration...",
+    "errorLoading": "Error loading brand configuration",
+    "retry": "Retry"
+  },
+  "MembersDashboard": {
+    "title": "Welcome back 👋",
+    "subtitle": "Here’s what’s happening in your community.",
+    "cards": {
+      "hours": "Volunteer hours",
+      "events": "Up-coming events",
+      "impact": "Lives touched",
+      "connections": "New connections"
+    },
+    "activity": {
+      "title": "Recent activity",
+      "empty": "No new updates yet—check again soon!"
+    }
+  },
+  "About": {
+    "hero": {
+      "badge": "Building Futures Together",
+      "title": "Transforming Lives,\nBuilding Communities",
+      "description": "AWE e.V. transforms cycles of poverty and displacement into pathways of dignity, self-reliance, and lasting prosperity. We believe every person carries the seeds of their own success—our role is to provide the soil, water, and sunlight.",
+      "cta": {
+        "programs": "Explore Our Programs",
+        "getInvolved": "Get Involved"
+      }
+    },
+    "stats": {
+      "livesTransformed": "Lives Transformed",
+      "businessesLaunched": "Businesses Launched",
+      "partnerOrganizations": "Partner Organizations",
+      "successRate": "Success Rate"
+    },
+    "story": {
+      "badge": "Our Journey",
+      "title": "Born from Experience,\nDriven by Purpose",
+      "description1": "AWE e.V. was founded in 2018 by Dr. Amara Okafor, who arrived in Germany as a refugee in 2005. Having experienced firsthand the challenges of displacement and integration, she recognized that traditional charity models often inadvertently perpetuate dependency.",
+      "description2": "Our approach is different. We work with communities, not for them. Every program is designed to build long-term capacity, preserve dignity, and create sustainable pathways to prosperity that participants control.",
+      "cta": "Read Our Full Story"
+    },
+    "values": {
+      "badge": "Our Values",
+      "title": "Principles That Guide Us",
+      "description": "Every decision we make is filtered through these core values that shape our approach to community empowerment.",
+      "items": {
+        "dignity": {
+          "title": "Dignity First",
+          "description": "Every intervention preserves and enhances human dignity, treating each person as an expert in their own life."
+        },
+        "results": {
+          "title": "Results-Driven",
+          "description": "We measure success through tangible outcomes: jobs created, businesses launched, and lives transformed."
+        },
+        "community": {
+          "title": "Community-Centered",
+          "description": "Solutions emerge from within communities, amplifying local wisdom and building sustainable change."
+        },
+        "cultural": {
+          "title": "Culturally Responsive",
+          "description": "We honor diverse backgrounds and create bridges between cultures while celebrating unique identities."
+        },
+        "innovation": {
+          "title": "Innovation",
+          "description": "We embrace creative solutions and emerging technologies to maximize impact and efficiency."
+        },
+        "transparency": {
+          "title": "Transparency",
+          "description": "Complete openness in our operations, finances, and impact measurement builds trust and accountability."
+        }
+      }
+    },
+    "team": {
+      "badge": "Leadership Team",
+      "title": "Meet the People Behind the Mission",
+      "description": "Our diverse leadership team brings together lived experience, academic expertise, and deep commitment to community empowerment.",
+      "cta": "Meet Our Full Team",
+      "members": {
+        "amara": {
+          "name": "Dr. Amara Okafor",
+          "role": "Founder & Executive Director",
+          "bio": "Former refugee turned social entrepreneur with 15+ years in community development. PhD in International Development from Oxford."
+        },
+        "marcus": {
+          "name": "Marcus Weber", 
+          "role": "Programs Director",
+          "bio": "German development professional specializing in economic empowerment programs across West Africa and Europe."
+        },
+        "fatima": {
+          "name": "Fatima Al-Rashid",
+          "role": "Community Outreach Manager",
+          "bio": "Multilingual community connector with deep roots in refugee support networks across Germany."
+        },
+        "james": {
+          "name": "Prof. James Mitchell",
+          "role": "Research & Impact Director",
+          "bio": "Former World Bank economist now focused on measuring social impact and sustainable development outcomes."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Make a Difference?",
+      "description": "Join our community of changemakers. Whether through volunteering, partnering, or supporting our programs, there's a place for you in our mission.",
+      "volunteer": "Become a Volunteer",
+      "support": "Support Our Work"
+    }
+  },
+  "Impact": {
+    "hero": {
+      "badge": "Measuring Real Impact",
+      "title": "Transforming Lives,\nOne Story at a Time",
+      "description": "Every number tells a human story. Behind each statistic is a person who found dignity, opportunity, and hope. Explore the measurable impact of community-centered empowerment across Germany and West Africa.",
+      "cta": {
+        "stories": "Explore Success Stories",
+        "reports": "View Full Reports"
+      }
+    },
+    "metrics": {
+      "badge": "Impact Metrics",
+      "title": "Numbers That Matter",
+      "description": "Every metric represents real human transformation and sustainable community change.",
+      "cards": {
+        "livesTransformed": {
+          "title": "Lives Transformed",
+          "value": "2,847+",
+          "subtitle": "Individuals supported since 2018"
+        },
+        "jobsCreated": {
+          "title": "Jobs Created",
+          "value": "1,234",
+          "subtitle": "Full-time employment opportunities"
+        },
+        "businessesLaunched": {
+          "title": "Businesses Launched",
+          "value": "267",
+          "subtitle": "Sustainable enterprises established"
+        },
+        "skillsCertified": {
+          "title": "Skills Certified",
+          "value": "3,456",
+          "subtitle": "Professional certifications earned"
+        },
+        "familiesHoused": {
+          "title": "Families Housed",
+          "value": "189",
+          "subtitle": "Stable housing secured"
+        },
+        "communityConnections": {
+          "title": "Community Connections",
+          "value": "4,567",
+          "subtitle": "Social integration touchpoints"
+        }
+      }
+    },
+    "charts": {
+      "badge": "Growth Analytics",
+      "title": "Tracking Our Progress",
+      "description": "Data-driven insights into our community impact and organizational growth over time.",
+      "growthChart": {
+        "title": "Community Growth Over Time",
+        "description": "Tracking participants, businesses launched, and jobs created since our founding"
+      },
+      "distributionChart": {
+        "title": "Program Impact Distribution",
+        "description": "How our resources are allocated across different program areas"
+      },
+      "outcomeChart": {
+        "title": "Program Success Rates vs. Targets",
+        "description": "How our programs perform against established benchmarks and industry standards"
+      }
+    },
+    "stories": {
+      "badge": "Success Stories",
+      "title": "Behind Every Number, A Human Story",
+      "description": "Meet the individuals whose journeys represent the true measure of our impact.",
+      "cta": "Read More Success Stories",
+      "individuals": {
+        "amina": {
+          "name": "Amina Hassan",
+          "program": "Economic Empowerment",
+          "before": "Unemployed refugee with accounting background",
+          "after": "Certified tax consultant with own practice",
+          "quote": "AWE didn't just give me a job, they helped me rebuild my career with dignity.",
+          "outcome": "€45K annual income, 3 employees hired"
+        },
+        "david": {
+          "name": "David Okonkwo",
+          "program": "Youth Leadership",
+          "before": "High school dropout struggling with integration",
+          "after": "University graduate and community organizer",
+          "quote": "The mentorship program showed me that my background was a strength, not a weakness.",
+          "outcome": "Full scholarship recipient, youth advocate"
+        },
+        "sara": {
+          "name": "Sara Al-Mansouri",
+          "program": "Health & Wellness",
+          "before": "Isolated mother with limited German language skills",
+          "after": "Certified health educator and community leader",
+          "quote": "I found my voice and purpose through the community health program.",
+          "outcome": "Leads health workshops for 200+ women"
+        }
+      }
+    },
+    "geographic": {
+      "badge": "Geographic Reach",
+      "title": "Impact Across Two Continents",
+      "description": "Our programs bridge communities from Germany to West Africa, creating sustainable change locally and globally.",
+      "stats": {
+        "germanCities": "German Cities",
+        "africanCountries": "African Countries"
+      },
+      "locations": {
+        "berlin": "Berlin, Germany",
+        "accra": "Accra, Ghana",
+        "hamburg": "Hamburg, Germany"
+      }
+    },
+    "vision": {
+      "badge": "Looking Ahead",
+      "title": "Our 2030 Vision",
+      "description": "Building on our success, we're setting ambitious goals for the next phase of community empowerment.",
+      "goals": {
+        "livesTransformed": "Lives Transformed",
+        "businessesLaunched": "Businesses Launched",
+        "partnerCities": "Partner Cities",
+        "economicImpact": "Economic Impact"
+      }
+    },
+    "cta": {
+      "title": "Ready to Be Part of Our Impact?",
+      "description": "Every contribution creates ripple effects of positive change. Join our mission to transform lives and build thriving communities.",
+      "support": "Support Our Programs",
+      "volunteer": "Volunteer With Us",
+      "reports": "View Full Reports"
+    }
+  },
+  "welcome": {
+    "subject": "Welcome to AWE e.V.!",
+    "title": "Hi {{name}}, welcome to AWE e.V.",
+    "body": "Thanks for joining our community. Complete your profile to get the most out of your membership.",
+    "cta": "Complete profile"
+  },
+  "donation": {
+    "subject": "Thank you for your generous donation!",
+    "title": "Hello {{name}}",
+    "body1": "We have received your donation of {{amount}}.",
+    "body2": "Your support helps us continue our mission. You will receive a formal receipt shortly.",
+    "receiptNotice": "A tax-deductible receipt will be sent in a separate email."
+  }
+}

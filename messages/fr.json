@@ -1,0 +1,346 @@
+{
+  "auth": {
+    "login": { "title": "Connectez-vous à AWE", "submit": "Continuer", "oauth": "Ou continuez avec" },
+    "signup": { "title": "Créer votre compte", "gdpr": "J'accepte la <0>politique de confidentialité</0>" },
+    "onboarding": {
+      "step1": { "title": "Informations personnelles", "subtitle": "Apprenons à vous connaître" },
+      "step2": { "title": "Parcours professionnel", "subtitle": "Aidez-nous à trouver des opportunités" },
+      "step3": { "title": "Préférences", "subtitle": "Contrôlez votre confidentialité & notifications" },
+      "done": { "title": "Tout est prêt !", "cta": "Aller au tableau de bord" }
+    }
+  },
+  "PublicHeader": {
+    "brandName": "AWE e.V.",
+    "nav": {
+      "about": "À propos",
+      "programs": "Programmes",
+      "ourWork": "Notre travail",
+      "impact": "Impact",
+      "getInvolved": "S'impliquer",
+      "news": "Actualités",
+      "contact": "Contact",
+      "openMenu": "Ouvrir le menu",
+      "toggleMenu": "Basculer le menu",
+      "mobileTitle": "Menu de navigation"
+    },
+    "programs": {
+      "economic": {
+        "title": "Autonomisation économique",
+        "description": "Soutien aux réfugiés et personnes déplacées dans la construction de moyens de subsistance durables grâce à la formation professionnelle, la microfinance et les programmes d'entrepreneuriat."
+      },
+      "education": {
+        "title": "Éducation et jeunesse",
+        "description": "Fourniture d'opportunités éducatives et de programmes de développement de la jeunesse pour briser le cycle de la pauvreté et créer des voies vers le succès."
+      },
+      "health": {
+        "title": "Santé et bien-être",
+        "description": "Assurer l'accès aux soins de santé, au soutien en santé mentale et aux programmes de bien-être pour les communautés vulnérables."
+      },
+      "social": {
+        "title": "Intégration sociale",
+        "description": "Facilitation de l'intégration communautaire, des échanges culturels et des programmes de cohésion sociale pour construire des sociétés inclusives."
+      }
+    },
+    "cta": {
+      "volunteer": "Devenir bénévole",
+      "donate": "Faire un don",
+      "memberLogin": "Se connecter"
+    }
+  },
+  "LanguageSwitcher": {
+    "changeLanguage": "Changer de langue",
+    "currentLanguage": "Langue actuelle"
+  },
+  "ThemeToggle": {
+    "toggleTheme": "Changer de thème",
+    "light": "Clair",
+    "dark": "Sombre",
+    "system": "Système"
+  },
+  "PublicFooter": {
+    "brandName": "AWE e.V.",
+    "tagline": "Transformer les cycles de pauvreté et de déplacement en voies de dignité, d'autonomie et de prospérité durable.",
+    "followUs": "Suivez-nous",
+    "rightsReserved": "Tous droits réservés.",
+    "motto": "Construire l'avenir ensemble",
+    "sections": {
+      "about": {
+        "title": "À propos",
+        "story": "Notre histoire",
+        "team": "Notre équipe",
+        "approach": "Notre approche"
+      },
+      "getInvolved": {
+        "title": "S'impliquer",
+        "donate": "Faire un don",
+        "volunteer": "Devenir bénévole",
+        "partner": "Devenir partenaire"
+      },
+      "legal": {
+        "title": "Légal",
+        "privacy": "Politique de confidentialité",
+        "terms": "Conditions d'utilisation",
+        "contact": "Contact"
+      }
+    }
+  },
+  "AuthLayout": {
+    "privacyPolicy": "Politique de Confidentialité",
+    "contactSupport": "Contacter le Support",
+    "copyright": "© {year} AWE e.V. Tous droits réservés." 
+  },
+  "LoginPage": {
+    "title": "Bienvenue sur le portail",
+    "subtitle": "Prêt à faire la différence ?",
+    "signUpLink": "Créer un compte",
+    "separator": "Ou se connecter avec un e-mail",
+    "emailLabel": "Adresse e-mail",
+    "emailPlaceholder": "vous@exemple.fr",
+    "passwordLabel": "Mot de passe",
+    "forgotPasswordLink": "Mot de passe oublié ?",
+    "loginButton": "Se Connecter",
+    "processingButton": "Connexion en cours...",
+    "mfa": {
+      "title": "Authentification à deux facteurs",
+      "subtitle": "Entrez le code de votre application d'authentification.",
+      "codeLabel": "Code de vérification",
+      "verifyButton": "Vérifier et se connecter",
+      "verifyingButton": "Vérification..."
+    },
+    "error": {
+        "title": "Échec de la connexion",
+        "invalidCredentials": "L'e-mail ou le mot de passe que vous avez entré est incorrect. Veuillez réessayer."
+    }
+  },
+  "RegisterPage": {
+    "title": "Créez votre compte",
+    "subtitle": "Rejoignez notre communauté d'acteurs du changement.",
+    "loginLink": "Se connecter à la place",
+    "separator": "Ou s'inscrire avec un e-mail",
+    "firstNameLabel": "Prénom",
+    "firstNamePlaceholder": "Marie",
+    "lastNameLabel": "Nom de famille",
+    "lastNamePlaceholder": "Dupont",
+    "emailLabel": "Adresse e-mail",
+    "emailPlaceholder": "vous@exemple.fr",
+    "passwordLabel": "Mot de passe",
+    "confirmPasswordLabel": "Confirmez le mot de passe",
+    "termsLabel": "J'accepte les",
+    "termsLink": "Conditions d'utilisation",
+    "signUpButton": "Créer un compte",
+    "processingButton": "Création du compte...",
+    "oauth": {
+      "google": "Continuer avec Google",
+      "facebook": "Continuer avec Facebook"
+    },
+    "success": {
+      "title": "Vous y êtes presque !",
+      "message": "Nous avons envoyé un lien de vérification à votre adresse e-mail. Veuillez cliquer sur le lien pour activer votre compte.",
+      "loginButton": "Retour à la connexion"
+    },
+    "error": {
+      "title": "Échec de l'inscription",
+      "default": "Une erreur inattendue s'est produite. Veuillez réessayer."
+    }
+  },
+  "PasswordResetRequestPage": {
+    "title": "Mot de passe oublié ?",
+    "subtitle": "Aucun problème. Entrez votre e-mail ci-dessous et nous vous enverrons un lien de réinitialisation.",
+    "emailLabel": "Adresse e-mail",
+    "emailPlaceholder": "vous@exemple.fr",
+    "submitButton": "Envoyer le lien de réinitialisation",
+    "processingButton": "Envoi en cours...",
+    "success": {
+      "title": "Vérifiez votre e-mail",
+      "message": "Si un compte avec cet e-mail existe, nous y avons envoyé un lien de réinitialisation de mot de passe.",
+      "backToLogin": "Retour à la connexion"
+    }
+  },
+  "PasswordResetConfirmPage": {
+    "title": "Définir un nouveau mot de passe",
+    "subtitle": "Créez un nouveau mot de passe fort pour votre compte.",
+    "passwordLabel": "Nouveau mot de passe",
+    "confirmPasswordLabel": "Confirmer le nouveau mot de passe",
+    "submitButton": "Réinitialiser le mot de passe",
+    "processingButton": "Réinitialisation...",
+    "success": {
+      "title": "Mot de passe réinitialisé !",
+      "message": "Votre mot de passe a été mis à jour avec succès. Vous pouvez maintenant vous connecter.",
+      "loginButton": "Aller à la connexion"
+    },
+    "error": {
+      "title": "Échec de la réinitialisation",
+      "invalidToken": "Ce lien de réinitialisation de mot de passe est invalide ou a expiré. Veuillez en demander un nouveau."
+    }
+  },
+  "VerifyPage": {
+    "verifying": {
+      "title": "Vérification de votre compte",
+      "message": "Veuillez patienter un instant pendant que nous confirmons votre adresse e-mail."
+    },
+    "success": {
+      "title": "E-mail vérifié !",
+      "message": "Votre compte a été vérifié avec succès. Vous pouvez maintenant vous connecter.",
+      "loginButton": "Aller à la connexion"
+    },
+    "error": {
+      "title": "La vérification a échoué",
+      "message": "Un problème est survenu. Veuillez réessayer ou demander un nouveau lien.",
+      "backToLogin": "Retour à la connexion",
+      "missingToken": "Aucun jeton de vérification n'a été fourni. Veuillez vérifier le lien dans votre e-mail.",
+      "default": "Le lien de vérification est invalide ou a expiré. Veuillez essayer de vous inscrire à nouveau ou contacter le support."
+    }
+  },
+  "OnboardingPage": {
+    "preferences": {
+      "title": "Comment souhaitez-vous que nous restions en contact ?",
+      "description": "Choisissez les communications que vous souhaitez recevoir de notre part. Vous pouvez modifier ces paramètres à tout moment dans votre profil.",
+      "newsletterLabel": "Newsletter mensuelle",
+      "newsletterDescription": "Recevez notre résumé mensuel avec les histoires de la communauté et les rapports d'impact.",
+      "projectUpdatesLabel": "Alertes pour les nouveaux projets",
+      "projectUpdatesDescription": "Soyez informé lorsque de nouvelles opportunités de bénévolat correspondant à vos intérêts sont disponibles.",
+      "eventInvitationsLabel": "Invitations aux événements communautaires",
+      "eventInvitationsDescription": "Soyez le premier informé des rencontres locales, des ateliers et des événements en ligne.",
+      "button": "Enregistrer les préférences",
+      "skipButton": "Passer pour l'instant"
+    },
+    "privacy": {
+      "title": "Votre vie privée est importante",
+      "description": "Nous nous engageons à protéger vos informations personnelles. Veuillez consulter et accepter notre politique de données pour continuer.",
+      "consentLabel": "J'ai lu et j'accepte la",
+      "privacyPolicyLink": "Politique de confidentialité",
+      "button": "Accepter et terminer la configuration"
+    }
+  },
+  "MembersSidebar": {
+    "brandName": "AWE Portal",
+    "nav": {
+      "dashboard": "Tableau de bord",
+      "myImpact": "Mon impact",
+      "resources": "Ressources",
+      "community": "Communauté"
+    }
+  },
+  "AdminHeader": {
+    "toggleNavigation": "Basculer le menu de navigation",
+    "toggleUserMenu": "Basculer le menu utilisateur",
+    "adminAccount": "Compte Admin",
+    "settings": "Paramètres",
+    "support": "Support",
+    "logout": "Déconnexion"
+  },
+  "AdminSidebar": {
+    "brandName": "AWE Admin",
+    "nav": {
+      "dashboard": "Tableau de bord",
+      "contentManagement": "Gestion de contenu",
+      "userManagement": "Gestion des utilisateurs",
+      "partnerships": "Partenariats",
+      "analytics": "Analytiques"
+    },
+    "settings": "Paramètres"
+  },
+  "HomePage": {
+    "sectionTitles": {
+      "impact": "Notre impact prouvé",
+      "differentiators": "Notre approche unique",
+      "stories": "Histoires de changement",
+      "storiesSubtitle": "Découvrez l'impact réel de notre approche holistique à travers les vies que nous touchons.",
+      "involvement": "Comment vous pouvez aider",
+      "newsletter": "Restez connecté"
+    },
+    "hero": {
+      "headlinePrimary": "Construire l'avenir",
+      "headlineAccent": "pas seulement fournir de l'aide",
+      "subheadline": "Nous autonomisons les femmes, les jeunes et les enfants — en particulier les réfugiés et les communautés déplacées — grâce à la formation, à l'éducation et à un soutien holistique qui crée un changement digne et durable.",
+      "trustIndicator1": "ONG certifiée",
+      "trustIndicator2": "Programmes primés",
+      "primaryCta": "Faire un don",
+      "secondaryCta": "Devenir partenaire"
+    },
+    "impact": {
+      "stat1": {
+        "label": "Personnes autonomisées",
+        "outcome": "grâce à la formation et au soutien"
+      },
+      "stat2": {
+        "label": "Nouvelles entreprises créées",
+        "outcome": "favorisant l'indépendance économique"
+      },
+      "stat3": {
+        "label": "Projets communautaires lancés",
+        "outcome": "répondant directement aux besoins locaux"
+      },
+      "stat4": {
+        "label": "Taux de réussite du programme",
+        "outcome": "démontrant un succès à long terme"
+      }
+    },
+    "differentiators": {
+      "item1": {
+        "title": "Dirigé par la communauté",
+        "description": "Nos solutions sont co-conçues avec les membres de la communauté pour garantir leur pertinence et leur appropriation à long terme."
+      },
+      "item2": {
+        "title": "Soutien holistique",
+        "description": "Nous répondons à des besoins interconnectés, de l'éducation et la santé à l'autonomisation économique."
+      },
+      "item3": {
+        "title": "Résultats prouvés",
+        "description": "Nos méthodes sont basées sur des données et continuellement affinées pour un impact maximal et mesurable."
+      },
+      "item4": {
+        "title": "Compétence culturelle",
+        "description": "Nous opérons avec un profond respect et une compréhension des cultures locales, instaurant la confiance et des partenariats efficaces."
+      }
+    },
+    "involvement": {
+      "option1": {
+        "title": "Faire un don",
+        "description": "Votre contribution finance directement nos programmes, fournissant des ressources et des formations essentielles.",
+        "cta": "Donner aujourd'hui"
+      },
+      "option2": {
+        "title": "Devenir partenaire",
+        "description": "Collaborez avec nous pour étendre notre impact et créer un changement systémique et durable.",
+        "cta": "Devenir partenaire"
+      },
+      "option3": {
+        "title": "Bénévolat",
+        "description": "Mettez vos compétences et votre temps au service d'une différence tangible dans la vie de nos participants.",
+        "cta": "Rejoignez notre équipe"
+      }
+    },
+    "stories": {
+      "readStory": "Lire l'histoire",
+      "viewAll": "Voir toutes les histoires"
+    },
+    "newsletter": {
+      "subtitle": "Rejoignez notre communauté et recevez des actualités sur notre impact et nos histoires de changement.",
+      "placeholder": "Entrez votre email",
+      "subscribe": "S'abonner"
+    }
+  },
+  "NotFound": {
+    "title": "Page non trouvée",
+    "description": "Désolé, nous n'avons pas trouvé la page que vous recherchez.",
+    "homeButton": "Retour à l'accueil"
+  },
+  "Metadata": {
+    "title": "AWE e.V. | Construire l'avenir",
+    "description": "Transformer les cycles de pauvreté et de déplacement en voies vers la dignité, l'autonomie et une prospérité durable."
+  },
+  "welcome": {
+    "subject": "Bienvenue à AWE e.V. !",
+    "title": "Bonjour {{name}}, bienvenue à AWE e.V.",
+    "body": "Merci de rejoindre notre communauté. Complétez votre profil pour tirer le meilleur parti de votre adhésion.",
+    "cta": "Compléter le profil"
+  },
+  "donation": {
+    "subject": "Merci pour votre généreux don !",
+    "title": "Bonjour {{name}}",
+    "body1": "Nous avons bien reçu votre don de {{amount}}.",
+    "body2": "Votre soutien nous aide à poursuivre notre mission. Vous recevrez un reçu officiel sous peu.",
+    "receiptNotice": "Un reçu fiscal vous sera envoyé par e-mail séparément."
+  }
+}
