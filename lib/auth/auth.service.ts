@@ -10,7 +10,7 @@ import { AccountExistsError, AuthError, InvalidCredentialsError, InvalidTokenErr
 import type { AuthResponse, AuthUser, AccessTokenPayload } from "./auth.types";
 import { Role, User } from "@prisma/client";
 import { rbacService } from "./rbac.service";
-import { inngest } from "@/app/api/auth/inngest/route";
+import { inngest } from "@/inngest/client";
 import { emailService } from "../email/email.service";
 import { onboardingService } from "../onboarding/onboarding.service";
 import type { Locale } from "../i18n";
@@ -35,7 +35,7 @@ async function finalizeLogin(user: User, ip?: string, userAgent?: string): Promi
     permissions: Array.from(permissions),
     isImpersonating: false,
   };
-  
+
   const accessToken = await signAccessToken(accessTokenPayload);
   const refreshToken = await signRefreshToken({ sub: user.id, jti: session.id });
 
@@ -78,16 +78,15 @@ export const authService = {
    * Registers a new user, hashes their password, and dispatches an event
    * to Inngest to send a verification email.
    */
-  async register(credentials: SignUpCredentials, req: NextRequest): Promise<User> {
+  async register(credentials: SignUpCredentials, ip?: string, locale?: Locale): Promise<User> {
     const { email, password, firstName, lastName } = credentials;
-    const locale = getLocaleFromRequest(req) as Locale;
-    const ip = getIpFromRequest(req);
+
 
     const existing = await prisma.user.findUnique({ where: { email } });
     if (existing) throw new AccountExistsError();
 
     const hashedPassword = await passwordService.hash(password);
-    
+
     const newUser = await prisma.user.create({
       data: {
         email,
@@ -139,10 +138,10 @@ export const authService = {
       // Return a specific shape that the API handler and client can understand
       return { mfaRequired: true, mfaToken };
     }
-    
+
     return finalizeLogin(user, ip, userAgent);
   },
-  
+
   /**
    * Verifies an MFA code and, if valid, finalizes the login process.
    */
@@ -169,7 +168,7 @@ export const authService = {
     if (!record || record.expires < new Date()) {
       throw new InvalidTokenError('Token is invalid or has expired.');
     }
-    
+
     // Use a transaction to ensure both operations succeed or fail together.
     await prisma.$transaction(async (tx) => {
       await tx.user.update({
@@ -178,7 +177,7 @@ export const authService = {
       });
       await tx.verificationToken.delete({ where: { id: record.id } });
     });
-    
+
     await auditLog("email_verified", record.userId);
   },
 
@@ -191,8 +190,8 @@ export const authService = {
     if (!user) return; // SECURITY: Do not throw error.
 
     await inngest.send({
-        name: 'auth/password.reset_requested',
-        data: { email: user.email, locale },
+      name: 'auth/password.reset_requested',
+      data: { email: user.email, locale },
     });
   },
 
@@ -209,19 +208,19 @@ export const authService = {
     const newHashedPassword = await passwordService.hash(newPassword);
 
     await prisma.$transaction(async (tx) => {
-        await tx.user.update({
-            where: { id: record.userId },
-            data: { hashedPassword: newHashedPassword }
-        });
-        // For security, delete all of the user's active sessions
-        await tx.userSession.deleteMany({ where: { userId: record.userId }});
-        // Delete the used token
-        await tx.passwordReset.delete({ where: { id: record.id } });
+      await tx.user.update({
+        where: { id: record.userId },
+        data: { hashedPassword: newHashedPassword }
+      });
+      // For security, delete all of the user's active sessions
+      await tx.userSession.deleteMany({ where: { userId: record.userId } });
+      // Delete the used token
+      await tx.passwordReset.delete({ where: { id: record.id } });
     });
 
     await auditLog("password_reset_success", record.userId);
   },
-  
+
   /**
    * Refreshes an access token using a valid refresh token.
    * Implements refresh token rotation for enhanced security.
@@ -231,16 +230,16 @@ export const authService = {
 
     // Use a transaction to perform rotation safely
     const session = await prisma.$transaction(async (tx) => {
-      const currentSession = await tx.userSession.findUnique({ where: { id: sessionId }});
-      
+      const currentSession = await tx.userSession.findUnique({ where: { id: sessionId } });
+
       // If session doesn't exist or is expired, it may be a replayed token
       if (!currentSession || currentSession.expiresAt < new Date()) {
         await auditLog("refresh_token_reuse_or_invalid", undefined, { attemptedUserId: userId, ip });
         // SECURITY: Invalidate all sessions for this user as a precaution
-        await tx.userSession.deleteMany({ where: { userId }});
+        await tx.userSession.deleteMany({ where: { userId } });
         throw new InvalidTokenError("Invalid session.");
       }
-      
+
       // Invalidate the old session
       await tx.userSession.delete({ where: { id: sessionId } });
       return currentSession;
@@ -252,7 +251,7 @@ export const authService = {
     // Finalize login to issue a new set of tokens and a new session
     return finalizeLogin(user, ip, userAgent);
   },
-  
+
   /**
    * Logs a user out by deleting their current session from the database.
    */
@@ -269,7 +268,7 @@ export const authService = {
   },
 
   // --- METHODS CALLED BY INNGEST ---
-  
+
   /**
    * [For Inngest] Creates a verification token and calls the email service.
    */

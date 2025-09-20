@@ -12,10 +12,10 @@ model BrandConfig {
   // Use a unique key to ensure there's only one config record
   singleton String @unique @default("main")
 
-  name      String
-  colors    Json // { primary: string, secondary: string, accent: string }
-  social    Json // { twitter?: string, facebook?: string, ... }
-  contact   Json // { email: string, phone?: string, ... }
+  name    String
+  colors  Json // { primary: string, secondary: string, accent: string }
+  social  Json // { twitter?: string, facebook?: string, ... }
+  contact Json // { email: string, phone?: string, ... }
 
   updatedAt DateTime @updatedAt
 }
@@ -41,23 +41,23 @@ enum Role {
 }
 
 model Permission {
-  id          String @id @default(cuid())
+  id       String @id @default(cuid())
   // e.g., 'posts', 'users', 'financial_reports'
-  resource    String 
+  resource String
   // e.g., 'create', 'read', 'update', 'delete', 'manage'
-  action      String 
+  action   String
 
-  roles       RolePermission[]
+  roles RolePermission[]
 
   @@unique([resource, action]) // Ensure no duplicate permissions
 }
 
 model RolePermission {
-  id            String      @id @default(cuid())
-  role          Role
-  permissionId  String
-  permission    Permission  @relation(fields: [permissionId], references: [id], onDelete: Cascade)
-  
+  id           String     @id @default(cuid())
+  role         Role
+  permissionId String
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
   @@unique([role, permissionId]) // A role can only have a specific permission once
 }
 
@@ -78,25 +78,25 @@ enum ContentStatus {
 // AUTHENTICATION MODELS
 // -----------------------------
 model Account {
-  id                 String  @id @default(cuid())
-  userId             String
-  provider           String
-  providerAccountId  String?    // optional for password users
+  id                String  @id @default(cuid())
+  userId            String
+  provider          String
+  providerAccountId String? // optional for password users
 
-// OAuth tokens - can be stored if needed for future API calls
-  access_token      String? @db.Text
-  refresh_token     String? @db.Text
-  expires_at        Int?
+  // OAuth tokens - can be stored if needed for future API calls
+  access_token  String? @db.Text
+  refresh_token String? @db.Text
+  expires_at    Int?
 
   @@unique([provider, providerAccountId])
 }
 
 model VerificationToken {
-  id        String   @id @default(cuid())
-  userId    String
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  token     String   @unique
-  expires   DateTime
+  id      String   @id @default(cuid())
+  userId  String
+  user    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  token   String   @unique
+  expires DateTime
 }
 
 // -----------------------------
@@ -104,31 +104,31 @@ model VerificationToken {
 // -----------------------------
 
 model User {
-  id                  String    @id @default(cuid())
-  firstName           String?
-  lastName            String?
-  email               String    @unique
-  username            String?   @unique
-  avatar              String?
-  hashedPassword      String?
-  isVerified          Boolean   @default(false)
-  emailVerified       DateTime?
-  lastLoginAt         DateTime?
-  createdAt           DateTime  @default(now())
-  updatedAt           DateTime  @updatedAt
+  id             String    @id @default(cuid())
+  firstName      String?
+  lastName       String?
+  email          String    @unique
+  username       String?   @unique
+  avatar         String?
+  hashedPassword String?
+  isVerified     Boolean   @default(false)
+  emailVerified  DateTime?
+  lastLoginAt    DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
 
   // --- Auth & Security ---
   roles               Role[]
-  mfaSecret           String?   // Encrypted TOTP secret
-  mfaEnabled          Boolean   @default(false)
-  impersonatingUserId String?   // For admin impersonation
+  mfaSecret           String? // Encrypted TOTP secret
+  mfaEnabled          Boolean @default(false)
+  impersonatingUserId String? // For admin impersonation
 
   // --- Relations ---
-  sessions            UserSession[]
-  passwordResets      PasswordReset[]
-  verificationTokens  VerificationToken[]
-  onboarding          UserOnboarding?
-  preferences         UserPreferences?
+  sessions           UserSession[]
+  passwordResets     PasswordReset[]
+  verificationTokens VerificationToken[]
+  onboarding         UserOnboarding?
+  preferences        UserPreferences?
 
   profile            UserProfile?
   createdPrograms    Program[]            @relation("CreatedBy")
@@ -140,32 +140,31 @@ model User {
   eventRegistrations EventRegistration[]
   participantIn      ProgramParticipant[]
 
-  language      String?
-  timezone      String?
+  language String?
+  timezone String?
 
-  PushSubscription   PushSubscription[]
-  UserToken          UserToken[]
-  UserStory          UserStory[]
-  ProgramEnrolment   ProgramEnrolment[]
-  PushDevice         PushDevice[]
+  PushSubscription PushSubscription[]
+  UserToken        UserToken[]
+  UserStory        UserStory[]
+  ProgramEnrolment ProgramEnrolment[]
+  PushDevice       PushDevice[]
 
   auditLog AuditLog[] @relation("AuditLogActor")
-
 }
 
 model UserSession {
-  id        String   @id @default(cuid())
-  userId    String
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
   sessionToken String @unique
-  
+
   // Session metadata
-  ipAddress    String?
-  userAgent    String?
-  deviceInfo   Json?
-  location     String?
-  
+  ipAddress  String?
+  userAgent  String?
+  deviceInfo Json?
+  location   String?
+
   createdAt DateTime @default(now())
   expiresAt DateTime
 }
@@ -176,89 +175,88 @@ model AuditLog {
   actor     User?    @relation("AuditLogActor", fields: [actorId], references: [id])
   action    String
   meta      Json?
-  ip        String?
   createdAt DateTime @default(now())
 }
 
 model PasswordReset {
-  id         String   @id @default(cuid())
-  userId     String
-  user       User     @relation(fields: [userId], references: [id])
-  token  String   @unique
-  expiresAt  DateTime
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  token     String   @unique
+  expiresAt DateTime
 }
 
 model UserOnboarding {
-  id             String   @id @default(cuid())
-  userId         String   @unique
-  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  
-  isCompleted    Boolean  @default(false)
-  completedAt    DateTime?
-  
+  id     String @id @default(cuid())
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  isCompleted Boolean   @default(false)
+  completedAt DateTime?
+
   // We store the entire state of all steps as a flexible JSON object.
   // This avoids schema changes if you add/remove/change steps later.
-  steps          Json
-  
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  steps Json
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model UserPreferences {
-  id              String    @id @default(cuid())
-  userId          String    @unique
-  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-  
+  id     String @id @default(cuid())
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
   // Communication
-  emailNotifications     Boolean  @default(true)
-  smsNotifications       Boolean  @default(false)
-  pushNotifications      Boolean  @default(true)
-  marketingEmails        Boolean  @default(false)
-  newsletterSubscription Boolean  @default(true)
+  emailNotifications     Boolean @default(true)
+  smsNotifications       Boolean @default(false)
+  pushNotifications      Boolean @default(true)
+  marketingEmails        Boolean @default(false)
+  newsletterSubscription Boolean @default(true)
 
   // Display
-  theme           String   @default("system") // 'light', 'dark', 'system'
-  language        String   @default("en")
-  timezone        String   @default("UTC")
-  dateFormat      String   @default("MM/dd/yyyy")
-  timeFormat      String   @default("12h") // '12h', '24h'
+  theme      String @default("system") // 'light', 'dark', 'system'
+  language   String @default("en")
+  timezone   String @default("UTC")
+  dateFormat String @default("MM/dd/yyyy")
+  timeFormat String @default("12h") // '12h', '24h'
 
   // Privacy
-  profileVisibility String   @default("public") // 'public', 'private', 'members_only'
-  showEmail         Boolean  @default(false)
-  showPhoneNumber   Boolean  @default(false)
-  showLocation      Boolean  @default(true)
+  profileVisibility String  @default("public") // 'public', 'private', 'members_only'
+  showEmail         Boolean @default(false)
+  showPhoneNumber   Boolean @default(false)
+  showLocation      Boolean @default(true)
 
   // Content
-  contentLanguage Json     @default("[\"en\"]")
-  contentTopics   Json     @default("[]")
+  contentLanguage Json @default("[\"en\"]")
+  contentTopics   Json @default("[]")
 
   // Advanced (optional)
   notificationSettings Json?
 
-  createdAt       DateTime  @default(now())
-  updatedAt       DateTime  @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model UserProfile {
-  id              String   @id @default(cuid())
-  userId          String   @unique
-  firstName       String?
-  lastName        String?
-  organization    String?
-  position        String?
-  preferences     Json?
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id           String   @id @default(cuid())
+  userId       String   @unique
+  firstName    String?
+  lastName     String?
+  organization String?
+  position     String?
+  preferences  Json?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   notifPreferences Json? // { EMAIL: true, PUSH: false, SMS: true }
 
-  language     String   @default("en") // en|de|fr
-  completedPct Int      @default(0)    // 0-100
-  avatarUrl    String?  // Cloudinary URL
-  bio          String?  @db.VarChar(500)
-  phone        String?  // E.164
+  language     String     @default("en") // en|de|fr
+  completedPct Int        @default(0) // 0-100
+  avatarUrl    String? // Cloudinary URL
+  bio          String?    @db.VarChar(500)
+  phone        String? // E.164
   city         String?
   country      String?
   birthDate    DateTime? // optional, GDPR sensitive
@@ -269,46 +267,46 @@ model UserProfile {
   skills       String[] // pg text[] array
   interests    String[] // pg text[] array
   visibility   Visibility @default(PRIVATE) // PRIVATE, INTERNAL, PUBLIC
-  notifPrefs   Json?     // {EMAIL:true, PUSH:false, SMS:true}
-  consent      Json?     // {marketing:true, analytics:true, modelPhotos:false}
-  dataRequests Json[]    // list of GDPR request IDs
+  notifPrefs   Json? // {EMAIL:true, PUSH:false, SMS:true}
+  consent      Json? // {marketing:true, analytics:true, modelPhotos:false}
+  dataRequests Json[] // list of GDPR request IDs
 
   Skill Skill[]
 }
 
 enum Visibility {
-  PRIVATE    // only self + admins
-  INTERNAL   // logged-in members
-  PUBLIC     // also public website (opt-in)
+  PRIVATE // only self + admins
+  INTERNAL // logged-in members
+  PUBLIC // also public website (opt-in)
 }
 
 model Program {
-  id              String               @id @default(cuid())
+  id              String          @id @default(cuid())
   name            Json
   description     Json
   category        ProgramCategory
-  status          ProgramStatus        @default(DRAFT)
+  status          ProgramStatus   @default(DRAFT)
   requirements    Json?
   capacity        Int?
   minAge          Int?
   maxAge          Int?
   requiredDocs    String[]
   cost            Decimal?
-  currency        String   @default("EUR")
+  currency        String          @default("EUR")
   startDate       DateTime?
   endDate         DateTime?
   createdByUserId String?
   updatedByUserId String?
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
 
-  createdBy       User?                @relation("CreatedBy", fields: [createdByUserId], references: [id], onUpdate: NoAction, onDelete: SetNull)
-  updatedBy       User?                @relation("UpdatedBy", fields: [updatedByUserId], references: [id], onUpdate: NoAction, onDelete: SetNull)
-  participants    ProgramParticipant[]
+  createdBy    User?                @relation("CreatedBy", fields: [createdByUserId], references: [id], onUpdate: NoAction, onDelete: SetNull)
+  updatedBy    User?                @relation("UpdatedBy", fields: [updatedByUserId], references: [id], onUpdate: NoAction, onDelete: SetNull)
+  participants ProgramParticipant[]
 
-  rules           Json
-  steps           Json
-  enrolments      ProgramEnrolment[]
+  rules      Json
+  steps      Json
+  enrolments ProgramEnrolment[]
 }
 
 enum ProgramStatus {
@@ -319,18 +317,19 @@ enum ProgramStatus {
 }
 
 model ProgramEnrolment {
-  id            String           @id @default(cuid())
-  programId     String
-  userId        String
-  status        EnrolmentStatus  @default(DRAFT)
-  step          Int              @default(0)
-  answers       Json             // step answers
-  docs          Json             // uploaded file public_ids
-  metadata      Json             // eligibility cache
-  createdAt     DateTime         @default(now())
-  updatedAt     DateTime         @updatedAt
-  program       Program          @relation(fields: [programId], references: [id])
-  user          User             @relation(fields: [userId], references: [id])
+  id        String          @id @default(cuid())
+  programId String
+  userId    String
+  status    EnrolmentStatus @default(DRAFT)
+  step      Int             @default(0)
+  answers   Json // step answers
+  docs      Json // uploaded file public_ids
+  metadata  Json // eligibility cache
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+  program   Program         @relation(fields: [programId], references: [id])
+  user      User            @relation(fields: [userId], references: [id])
+
   @@unique([programId, userId])
 }
 
@@ -366,8 +365,8 @@ model ProgramParticipant {
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
 
-  program        Program   @relation(fields: [programId], references: [id], onDelete: Cascade)
-  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  program Program @relation(fields: [programId], references: [id], onDelete: Cascade)
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([programId, userId])
 }
@@ -384,11 +383,11 @@ model Post {
   createdAt   DateTime      @default(now())
   updatedAt   DateTime      @updatedAt
 
-  author      User          @relation(fields: [authorId], references: [id])
+  author User @relation(fields: [authorId], references: [id])
 }
 
 model Event {
-  id                   String              @id @default(cuid())
+  id                   String   @id @default(cuid())
   title                Json
   description          Json
   eventType            String
@@ -396,14 +395,14 @@ model Event {
   endDate              DateTime
   location             Json?
   capacity             Int?
-  registrationRequired Boolean             @default(true)
+  registrationRequired Boolean  @default(true)
   status               String
   createdByUserId      String?
-  createdAt            DateTime            @default(now())
-  updatedAt            DateTime            @updatedAt
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
 
-  createdBy            User?               @relation("CreatedBy", fields: [createdByUserId], references: [id], onUpdate: NoAction, onDelete: SetNull)
-  registrations        EventRegistration[]
+  createdBy     User?               @relation("CreatedBy", fields: [createdByUserId], references: [id], onUpdate: NoAction, onDelete: SetNull)
+  registrations EventRegistration[]
 }
 
 model EventRegistration {
@@ -414,26 +413,26 @@ model EventRegistration {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  event     Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  event Event @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([eventId, userId])
 }
 
 model Donation {
-  id               String   @id @default(cuid())
-  amount           Decimal
-  currency         String   @default("EUR")
-  frequency        String   @default("ONE_TIME")
-  paymentMethod    String?
-  paymentId        String?  @unique
-  status           String   @default("PENDING")
-  processedAt      DateTime?
-  anonymous        Boolean  @default(false)
-  donorId          String
-  createdAt        DateTime @default(now())
+  id            String    @id @default(cuid())
+  amount        Decimal
+  currency      String    @default("EUR")
+  frequency     String    @default("ONE_TIME")
+  paymentMethod String?
+  paymentId     String?   @unique
+  status        String    @default("PENDING")
+  processedAt   DateTime?
+  anonymous     Boolean   @default(false)
+  donorId       String
+  createdAt     DateTime  @default(now())
 
-  donor            User     @relation(fields: [donorId], references: [id])
+  donor User @relation(fields: [donorId], references: [id])
 }
 
 model AppSetting {
@@ -456,33 +455,33 @@ enum NotifStatus {
 }
 
 model Notification {
-  id            String       @id @default(cuid())
-  userId        String
-  title         String
-  body          String?
-  type          String       @default("info")
-  read          Boolean      @default(false)
-  linkHref      String?
-  createdAt     DateTime     @default(now())
-  updatedAt     DateTime     @updatedAt
-  user          User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id        String   @id @default(cuid())
+  userId    String
+  title     String
+  body      String?
+  type      String   @default("info")
+  read      Boolean  @default(false)
+  linkHref  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  deliveries    NotificationDelivery[]
+  deliveries NotificationDelivery[]
 }
 
 model NotificationDelivery {
-  id              String       @id @default(cuid())
-  notificationId  String
-  channel         Channel
-  status          NotifStatus  @default(PENDING)
-  executedAt      DateTime?
-  failReason      String?      @db.Text
-  retryCount      Int          @default(0)
-  idempotencyKey  String       @unique
-  createdAt       DateTime     @default(now())
-  updatedAt       DateTime     @updatedAt
+  id             String      @id @default(cuid())
+  notificationId String
+  channel        Channel
+  status         NotifStatus @default(PENDING)
+  executedAt     DateTime?
+  failReason     String?     @db.Text
+  retryCount     Int         @default(0)
+  idempotencyKey String      @unique
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
 
-  notification    Notification @relation(fields: [notificationId], references: [id], onDelete: Cascade)
+  notification Notification @relation(fields: [notificationId], references: [id], onDelete: Cascade)
 
   @@index([status, retryCount])
 }
@@ -494,21 +493,22 @@ model PushSubscription {
   keys      Json
   createdAt DateTime @default(now())
 
-  auth          String
-  locale        String   @default("en")
-  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  auth   String
+  locale String @default("en")
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
 }
 
 model UserToken {
-  id           String   @id @default(cuid())
-  userId       String
-  type         TokenType
-  token        String   @unique
-  expires      DateTime
-  createdAt    DateTime @default(now())
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id        String    @id @default(cuid())
+  userId    String
+  type      TokenType
+  token     String    @unique
+  expires   DateTime
+  createdAt DateTime  @default(now())
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
   @@index([token])
 }
 
@@ -524,25 +524,25 @@ enum TokenType {
 }
 
 model Skill {
-  id          String @id @default(cuid())
-  name        Json
-  category    String
-  users       UserProfile[]
+  id       String        @id @default(cuid())
+  name     Json
+  category String
+  users    UserProfile[]
 }
 
 model UserStory {
-  id          String   @id @default(cuid())
-  userId      String   @unique
-  slug        String   @unique
-  headline    Json
-  body        Json
-  quote       Json
-  tags        String[]
-  heroImage   String?
-  status      StoryStatus @default(DRAFT)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id        String      @id @default(cuid())
+  userId    String      @unique
+  slug      String      @unique
+  headline  Json
+  body      Json
+  quote     Json
+  tags      String[]
+  heroImage String?
+  status    StoryStatus @default(DRAFT)
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([status, slug])
 }
@@ -555,13 +555,14 @@ enum StoryStatus {
 }
 
 model PushDevice {
-  id          String     @id @default(cuid())
-  userId      String
-  token       String     @unique
-  platform    Platform
-  locale      String     @default("en")
-  createdAt   DateTime   @default(now())
-  user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id        String   @id @default(cuid())
+  userId    String
+  token     String   @unique
+  platform  Platform
+  locale    String   @default("en")
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
   @@index([userId])
 }
 

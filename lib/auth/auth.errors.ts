@@ -38,3 +38,17 @@ export class MfaRequiredError extends AuthError {
     this.mfaToken = mfaToken;
   }
 }
+
+export class AccountExistsVerifiedError extends AccountExistsError {
+  constructor(message = 'This account already exists. Please log in.') {
+    super(message);
+    this.name = 'AccountExistsVerifiedError';
+  }
+}
+
+export class AccountExistsUnverifiedError extends AccountExistsError {
+  constructor(message = 'Account exists but is not verified. A new verification email has been sent.') {
+    super(message);
+    this.name = 'AccountExistsUnverifiedError';
+  }
+}

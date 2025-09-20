@@ -5,14 +5,14 @@ import { verifyAccessToken } from '@/lib/auth/tokens/jwt.service';
 import { AccessTokenPayload } from '@/lib/auth/auth.types';
 import { consumeGlobal, consumeLogin } from '@/lib/rate-limit';
 import { getLocaleFromRequest } from '@/lib/utils/request';
-import { 
-    AuthError, 
-    InvalidCredentialsError, 
-    AccountExistsError, 
-    InvalidTokenError, 
-    MfaRequiredError 
+import {
+  AuthError,
+  InvalidCredentialsError,
+  AccountExistsError,
+  InvalidTokenError,
+  MfaRequiredError
 } from '@/lib/auth/auth.errors';
-import { ADMIN_ROLES } from '@/lib/auth/roles'; 
+import { ADMIN_ROLES } from '@/lib/auth/roles';
 import { Role } from '@prisma/client';
 
 type AuthLevel = 'public' | 'authenticated' | 'admin'; // 'admin' can be used later
@@ -23,7 +23,7 @@ interface HandlerOptions<TBody, TQuery> {
   limiter?: LimiterType;
   bodySchema?: z.ZodSchema<TBody>;
   querySchema?: z.ZodSchema<TQuery>;
-   allowedRoles?: Role[];
+  allowedRoles?: Role[];
 }
 
 type ApiHandlerContext<TBody, TQuery> = {
@@ -40,15 +40,15 @@ type ApiHandler<TBody, TQuery> = (
 
 // Helper to get bearer token from request
 async function getSessionFromRequest(req: NextRequest): Promise<AccessTokenPayload | null> {
-    const authHeader = req.headers.get("authorization");
-    if (!authHeader?.startsWith("Bearer ")) return null;
-    
-    try {
-        const token = authHeader.substring(7);
-        return await verifyAccessToken(token);
-    } catch {
-        return null;
-    }
+  const authHeader = req.headers.get("authorization");
+  if (!authHeader?.startsWith("Bearer ")) return null;
+
+  try {
+    const token = authHeader.substring(7);
+    return await verifyAccessToken(token);
+  } catch {
+    return null;
+  }
 }
 
 export function createApiHandler<TBody = unknown, TQuery = unknown>(

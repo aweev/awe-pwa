@@ -1,12 +1,31 @@
 {
   "auth": {
-    "login": { "title": "Sign in to AWE", "submit": "Continue", "oauth": "Or continue with" },
-    "signup": { "title": "Create your account", "gdpr": "I agree to the <0>privacy policy</0>" },
+    "login": {
+      "title": "Sign in to AWE",
+      "submit": "Continue",
+      "oauth": "Or continue with"
+    },
+    "signup": {
+      "title": "Create your account",
+      "gdpr": "I agree to the <0>privacy policy</0>"
+    },
     "onboarding": {
-      "step1": { "title": "Personal info", "subtitle": "Let's get to know you" },
-      "step2": { "title": "Professional background", "subtitle": "Help us match opportunities" },
-      "step3": { "title": "Preferences", "subtitle": "Control your privacy & notifications" },
-      "done": { "title": "You're all set!", "cta": "Go to dashboard" }
+      "step1": {
+        "title": "Personal info",
+        "subtitle": "Let's get to know you"
+      },
+      "step2": {
+        "title": "Professional background",
+        "subtitle": "Help us match opportunities"
+      },
+      "step3": {
+        "title": "Preferences",
+        "subtitle": "Control your privacy & notifications"
+      },
+      "done": {
+        "title": "You're all set!",
+        "cta": "Go to dashboard"
+      }
     }
   },
   "PublicHeader": {
@@ -108,8 +127,10 @@
       "verifyingButton": "Verifying..."
     },
     "error": {
-        "title": "Login Failed",
-        "invalidCredentials": "The email or password you entered is incorrect. Please try again."
+      "title": "Login Failed",
+      "invalidCredentials": "The email or password you entered is incorrect. Please try again.",
+      "emailNotVerified": "Your account is not verified. We've sent a new verification link to your email.",
+      "invalidMfaCode": "The verification code is incorrect. Please try again."
     }
   },
   "RegisterPage": {
@@ -140,7 +161,8 @@
     },
     "error": {
       "title": "Registration Failed",
-      "default": "An unexpected error occurred. Please try again."
+      "default": "An unexpected error occurred. Please try again.",
+      "accountExists": "An account with this email address already exists. Please log in instead."
     }
   },
   "PasswordResetRequestPage": {
@@ -454,7 +476,7 @@
           "bio": "Former refugee turned social entrepreneur with 15+ years in community development. PhD in International Development from Oxford."
         },
         "marcus": {
-          "name": "Marcus Weber", 
+          "name": "Marcus Weber",
           "role": "Programs Director",
           "bio": "German development professional specializing in economic empowerment programs across West Africa and Europe."
         },

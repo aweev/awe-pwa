@@ -1,4 +1,4 @@
-// lib/i18n.ts (Final, Corrected, and Simplified Version)
+// lib/i18n.ts
 
 import { getRequestConfig } from 'next-intl/server';
 

@@ -76,9 +76,9 @@ export default function LoginPage() {
     const result = await verifyMfa({ ...values, mfaToken });
     if (result?.user) {
       if (result.onboardingCompleted) {
-            router.push("/members/dashboard");
-        } else {
-      router.push("/onboarding");
+        router.push("/members/dashboard");
+      } else {
+        router.push("/onboarding");
       }
     }
   };
@@ -106,7 +106,7 @@ export default function LoginPage() {
 
       <div className="mt-8">
         <OAuthButtonGroup />
-        
+
         <div className="relative my-6">
           <div className="absolute inset-0 flex items-center">
             <span className="w-full border-t" />
@@ -178,7 +178,7 @@ export default function LoginPage() {
                   <Button type="submit" className="w-full" disabled={isProcessing || !loginForm.formState.isValid}>
                     {isProcessing ? (
                       <>
-                        <Spinner size={20} className="mr-2" /> 
+                        <Spinner size={20} className="mr-2" />
                         {t("processingButton")}
                       </>
                     ) : (
@@ -228,7 +228,7 @@ export default function LoginPage() {
                   <Button type="submit" className="w-full" disabled={isProcessing || !mfaForm.formState.isValid}>
                     {isProcessing ? (
                       <>
-                        <Spinner size={20} className="mr-2" /> 
+                        <Spinner size={20} className="mr-2" />
                         {t("mfa.verifyingButton")}
                       </>
                     ) : (
@@ -240,19 +240,22 @@ export default function LoginPage() {
             </motion.div>
           )}
         </AnimatePresence>
-        
+
         {/* Universal Error Display */}
         {currentError && (
-            <motion.div variants={slideUp} initial="hidden" animate="visible" className="mt-4">
-                <Alert variant="destructive">
-                    <Icon name="alertTriangle" className="h-4 w-4" />
-                    <AlertTitle>{t("error.title")}</AlertTitle>
-                    <AlertDescription>
-                        {/* You can map specific error messages here if needed */}
-                        {t("error.invalidCredentials")}
-                    </AlertDescription>
-                </Alert>
-            </motion.div>
+          <motion.div variants={slideUp} initial="hidden" animate="visible" className="mt-4">
+            <Alert variant="destructive">
+              <Icon name="alertTriangle" className="h-4 w-4" />
+              <AlertTitle>{t("error.title")}</AlertTitle>
+              <AlertDescription>
+                {currentError?.response?.data?.code === 'EMAIL_NOT_VERIFIED'
+                  ? t("error.emailNotVerified")
+                  : currentError?.response?.data?.code === 'INVALID_MFA_CODE'
+                    ? t("error.invalidMfaCode")
+                    : t("error.invalidCredentials")}
+              </AlertDescription>
+            </Alert>
+          </motion.div>
         )}
       </div>
     </>

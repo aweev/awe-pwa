@@ -1,4 +1,3 @@
-// app/[locale]/(auth)/register/page.tsx
 "use client";
 
 import Link from "next/link";
@@ -6,8 +5,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { useState } from "react";
-// import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import type { z } from "zod";
 
 import { signUpSchema } from "@/lib/auth/auth.schemas";
@@ -34,10 +33,14 @@ type SignUpFormValues = z.infer<typeof signUpSchema>;
 
 export default function RegisterPage() {
   const t = useTranslations("RegisterPage");
-//   const router = useRouter();
+  const router = useRouter();
   const [isSuccess, setIsSuccess] = useState(false);
 
   const { signup, isSigningUp, signupError } = useAuthActions();
+
+  useEffect(() => {
+    setIsSuccess(false);
+  }, []);
 
   const form = useForm<SignUpFormValues>({
     resolver: zodResolver(signUpSchema),
@@ -52,17 +55,19 @@ export default function RegisterPage() {
     mode: 'onChange',
   });
 
+  // --- THIS FUNCTION IS NOW ONLY FOR LOGIC ---
   const handleSignUpSubmit = async (values: SignUpFormValues) => {
-    try {
-      await signup(values);
+    const result = await signup(values);
+    if (result) {
       setIsSuccess(true);
-      // Optional: redirect after a delay
-      // setTimeout(() => router.push('/login'), 3000);
-    } catch (error) {
-      // Error is handled by the signupError state from the hook
-      console.error(error);
+      setTimeout(() => {
+        router.push('/login');
+      }, 3000);
     }
+    // It no longer returns any JSX
   };
+
+  // --- THE RETURN STATEMENT IS NOW AT THE TOP LEVEL OF THE COMPONENT ---
 
   if (isSuccess) {
     return (
@@ -113,11 +118,11 @@ export default function RegisterPage() {
         </div>
 
         <motion.div
-            key="signup-form"
-            variants={slideUp}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 0.2 }}
+          key="signup-form"
+          variants={slideUp}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.2 }}
         >
           <Form {...form}>
             <form
@@ -194,7 +199,7 @@ export default function RegisterPage() {
                   </FormItem>
                 )}
               />
-              
+
               <FormField
                 control={form.control}
                 name="terms"
@@ -222,7 +227,7 @@ export default function RegisterPage() {
               <Button type="submit" className="w-full" disabled={isSigningUp || !form.formState.isValid}>
                 {isSigningUp ? (
                   <>
-                    <Spinner size={20} className="mr-2" /> 
+                    <Spinner size={20} className="mr-2" />
                     {t("processingButton")}
                   </>
                 ) : (
@@ -232,17 +237,19 @@ export default function RegisterPage() {
             </form>
           </Form>
         </motion.div>
-        
+
         {signupError && (
           <motion.div variants={slideUp} initial="hidden" animate="visible" className="mt-4">
-              <Alert variant="destructive">
-                  <Icon name="alertTriangle" className="h-4 w-4" />
-                  <AlertTitle>{t("error.title")}</AlertTitle>
-                  <AlertDescription>
-                    {/* You can map specific error messages here for "Account already exists" etc. */}
-                    {t("error.default")}
-                  </AlertDescription>
-              </Alert>
+            <Alert variant="destructive">
+              <Icon name="alertTriangle" className="h-4 w-4" />
+              <AlertTitle>{t("error.title")}</AlertTitle>
+              <AlertDescription>
+                {signupError?.payload?.code === 'ACCOUNT_EXISTS'
+                  ? t("error.accountExists")
+                  : t("error.default")
+                }
+              </AlertDescription>
+            </Alert>
           </motion.div>
         )}
       </div>

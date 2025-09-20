@@ -1,12 +1,31 @@
 {
   "auth": {
-    "login": { "title": "Bei AWE anmelden", "submit": "Weiter", "oauth": "Oder weiter mit" },
-    "signup": { "title": "Konto erstellen", "gdpr": "Ich stimme der <0>Datenschutzrichtlinie</0> zu" },
+    "login": {
+      "title": "Bei AWE anmelden",
+      "submit": "Weiter",
+      "oauth": "Oder weiter mit"
+    },
+    "signup": {
+      "title": "Konto erstellen",
+      "gdpr": "Ich stimme der <0>Datenschutzrichtlinie</0> zu"
+    },
     "onboarding": {
-      "step1": { "title": "Persönliche Informationen", "subtitle": "Lernen wir Sie kennen" },
-      "step2": { "title": "Beruflicher Hintergrund", "subtitle": "Helfen Sie uns, Möglichkeiten zu finden" },
-      "step3": { "title": "Präferenzen", "subtitle": "Steuern Sie Ihre Privatsphäre & Benachrichtigungen" },
-      "done": { "title": "Alles erledigt!", "cta": "Zum Dashboard" }
+      "step1": {
+        "title": "Persönliche Informationen",
+        "subtitle": "Lernen wir Sie kennen"
+      },
+      "step2": {
+        "title": "Beruflicher Hintergrund",
+        "subtitle": "Helfen Sie uns, Möglichkeiten zu finden"
+      },
+      "step3": {
+        "title": "Präferenzen",
+        "subtitle": "Steuern Sie Ihre Privatsphäre & Benachrichtigungen"
+      },
+      "done": {
+        "title": "Alles erledigt!",
+        "cta": "Zum Dashboard"
+      }
     }
   },
   "PublicHeader": {
@@ -108,8 +127,10 @@
       "verifyingButton": "Überprüfe..."
     },
     "error": {
-        "title": "Anmeldung fehlgeschlagen",
-        "invalidCredentials": "Die eingegebene E-Mail-Adresse oder das Passwort ist falsch. Bitte versuchen Sie es erneut."
+      "title": "Anmeldung fehlgeschlagen",
+      "invalidCredentials": "Die eingegebene E-Mail-Adresse oder das Passwort ist falsch. Bitte versuchen Sie es erneut.",
+      "emailNotVerified": "Ihr Konto ist nicht verifiziert. Wir haben einen neuen Bestätigungslink an Ihre E-Mail gesendet.",
+      "invalidMfaCode": "Der Bestätigungscode ist falsch. Bitte versuchen Sie es erneut."
     }
   },
   "RegisterPage": {
@@ -140,7 +161,8 @@
     },
     "error": {
       "title": "Registrierung fehlgeschlagen",
-      "default": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
+      "default": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+      "accountExists": "Ein Konto mit dieser E-Mail-Adresse existiert bereits. Bitte loggen Sie sich stattdessen ein."
     }
   },
   "PasswordResetRequestPage": {
@@ -191,7 +213,7 @@
       "default": "Der Verifizierungslink ist ungültig oder abgelaufen. Bitte versuchen Sie, sich erneut zu registrieren oder kontaktieren Sie den Support."
     }
   },
-   "OnboardingPage": {
+  "OnboardingPage": {
     "preferences": {
       "title": "Wie sollen wir in Kontakt bleiben?",
       "description": "Wählen Sie die Mitteilungen aus, die Sie von uns erhalten möchten. Sie können diese Einstellungen jederzeit in Ihrem Profil ändern.",
@@ -217,14 +239,14 @@
     "toggleUserMenu": "Benutzermenü umschalten",
     "searchPlaceholder": "Ressourcen suchen...",
     "myAccount": "Mein Konto",
-    "settings": "Einstellungen", 
+    "settings": "Einstellungen",
     "support": "Support",
     "logout": "Abmelden"
   },
   "MembersSidebar": {
     "brandName": "AWE Portal",
     "nav": {
-      "dashboard": "Dashboard", 
+      "dashboard": "Dashboard",
       "myImpact": "Meine Wirkung",
       "resources": "Ressourcen",
       "community": "Gemeinschaft"
@@ -235,7 +257,7 @@
     "toggleUserMenu": "Benutzermenü umschalten",
     "adminAccount": "Admin-Konto",
     "settings": "Einstellungen",
-    "support": "Support", 
+    "support": "Support",
     "logout": "Abmelden"
   },
   "AdminSidebar": {
@@ -243,7 +265,7 @@
     "nav": {
       "dashboard": "Dashboard",
       "contentManagement": "Content-Verwaltung",
-      "userManagement": "Benutzerverwaltung", 
+      "userManagement": "Benutzerverwaltung",
       "partnerships": "Partnerschaften",
       "analytics": "Analytik"
     },
@@ -260,7 +282,7 @@
     },
     "hero": {
       "headlinePrimary": "Zukunft gestalten",
-    "headlineAccent": "statt nur Hilfe zu leisten",
+      "headlineAccent": "statt nur Hilfe zu leisten",
       "subheadline": "Wir befähigen Frauen, Jugendliche und Kinder — insbesondere Geflüchtete und Vertriebene — durch Kompetenztraining, Bildung und ganzheitliche Unterstützung, die einen dauerhaften, würdevollen Wandel schaffen.",
       "trustIndicator1": "Zertifizierte NGO",
       "trustIndicator2": "Preisgekrönte Programme",
