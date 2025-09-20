@@ -75,7 +75,11 @@ export default function LoginPage() {
     if (!mfaToken) return;
     const result = await verifyMfa({ ...values, mfaToken });
     if (result?.user) {
-      router.push("/members/dashboard");
+      if (result.onboardingCompleted) {
+            router.push("/members/dashboard");
+        } else {
+      router.push("/onboarding");
+      }
     }
   };
 

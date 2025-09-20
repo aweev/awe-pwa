@@ -80,29 +80,23 @@ enum ContentStatus {
 model Account {
   id                 String  @id @default(cuid())
   userId             String
-  type               String
-  provider           OAuthProvider? 
+  provider           String
   providerAccountId  String?    // optional for password users
-  refresh_token      String?    @db.Text
-  access_token       String?    @db.Text
-  expires_at         Int?
-  token_type         String?
-  scope              String?
-  id_token           String?    @db.Text
-  session_state      String?
-  user               User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+// OAuth tokens - can be stored if needed for future API calls
+  access_token      String? @db.Text
+  refresh_token     String? @db.Text
+  expires_at        Int?
 
   @@unique([provider, providerAccountId])
 }
 
 model VerificationToken {
   id        String   @id @default(cuid())
-  token     String   @unique
-  expires   DateTime
   userId    String
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@unique([userId, token])
+  token     String   @unique
+  expires   DateTime
 }
 
 // -----------------------------
@@ -110,26 +104,32 @@ model VerificationToken {
 // -----------------------------
 
 model User {
-  firstName     String?
-  lastName      String?
-  isVerified    Boolean  @default(false)
-  lastLoginAt   DateTime?
-  memberType    String?
-  
-  id                 String               @id @default(cuid())
-  username               String?
-  email              String?              @unique
-  emailVerified      DateTime?
-  avatar              String? 
-  hashedPassword     String?
-  role               Role                 @default(ACTIVE_VOLUNTEER)
-  onboardingComplete Boolean              @default(false)
-  active             Boolean              @default(true)
-  lastLogin          DateTime?
-  createdAt          DateTime             @default(now())
-  updatedAt          DateTime             @updatedAt
+  id                  String    @id @default(cuid())
+  firstName           String?
+  lastName            String?
+  email               String    @unique
+  username            String?   @unique
+  avatar              String?
+  hashedPassword      String?
+  isVerified          Boolean   @default(false)
+  emailVerified       DateTime?
+  lastLoginAt         DateTime?
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
 
-  accounts           Account[]
+  // --- Auth & Security ---
+  roles               Role[]
+  mfaSecret           String?   // Encrypted TOTP secret
+  mfaEnabled          Boolean   @default(false)
+  impersonatingUserId String?   // For admin impersonation
+
+  // --- Relations ---
+  sessions            UserSession[]
+  passwordResets      PasswordReset[]
+  verificationTokens  VerificationToken[]
+  onboarding          UserOnboarding?
+  preferences         UserPreferences?
+
   profile            UserProfile?
   createdPrograms    Program[]            @relation("CreatedBy")
   updatedPrograms    Program[]            @relation("UpdatedBy")
@@ -143,30 +143,14 @@ model User {
   language      String?
   timezone      String?
 
-  preferences UserPreferences?
   PushSubscription   PushSubscription[]
   UserToken          UserToken[]
   UserStory          UserStory[]
   ProgramEnrolment   ProgramEnrolment[]
   PushDevice         PushDevice[]
 
-  // --- MFA Fields ---
-  mfaSecret   String? // Encrypted TOTP secret
-  mfaEnabled  Boolean @default(false)
-  impersonatingUserId String?
-
-  // --- Relations ---
-  roles             Role[]
-  sessions          UserSession[]
-  auditLogs         AuditLog[]
-  passwordResets    PasswordReset[]
-  emailVerifications EmailVerification[]
-
-   verificationTokens VerificationToken[]
-
   auditLog AuditLog[] @relation("AuditLogActor")
 
-  onboarding UserOnboarding?
 }
 
 model UserSession {
@@ -175,8 +159,6 @@ model UserSession {
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   
   sessionToken String @unique
-  accessToken  String?
-  refreshToken String?
   
   // Session metadata
   ipAddress    String?
@@ -184,16 +166,8 @@ model UserSession {
   deviceInfo   Json?
   location     String?
   
-  // Session status
-  isActive     Boolean  @default(true)
-  lastActivity DateTime @default(now())
-  
   createdAt DateTime @default(now())
   expiresAt DateTime
-  
-  @@map("user_sessions")
-  @@index([sessionToken])
-  @@index([userId, isActive])
 }
 
 model AuditLog {
@@ -203,30 +177,15 @@ model AuditLog {
   action    String
   meta      Json?
   ip        String?
-  userAgent String?
   createdAt DateTime @default(now())
-
-  User User[]
 }
 
 model PasswordReset {
   id         String   @id @default(cuid())
   userId     String
   user       User     @relation(fields: [userId], references: [id])
-  tokenHash  String   @unique
-  createdAt  DateTime @default(now())
+  token  String   @unique
   expiresAt  DateTime
-  used       Boolean  @default(false)
-}
-
-model EmailVerification {
-  id        String   @id @default(cuid())
-  userId    String
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  tokenHash String   @unique
-  expiresAt DateTime
-  used      Boolean  @default(false)
-  createdAt DateTime @default(now())
 }
 
 model UserOnboarding {

@@ -3,7 +3,7 @@ import { Inngest } from 'inngest';
 import { serve } from 'inngest/next';
 import { authService } from '@/lib/auth/auth.service';
 
-export const inngest = new Inngest({ id: 'your-app-name' });
+export const inngest = new Inngest({ id: 'awe' });
 
 const sendVerificationEmail = inngest.createFunction(
   { id: 'send-verification-email', retries: 3 },
@@ -11,7 +11,7 @@ const sendVerificationEmail = inngest.createFunction(
   async ({ event }) => {
     const { email, locale } = event.data;
     await authService.createAndSendVerificationToken(email, locale);
-    return { event, body: `Verification email job for ${email} completed.` };
+    return { message: `Verification email job for ${email} completed.` };
   }
 );
 

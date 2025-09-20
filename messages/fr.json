@@ -342,5 +342,25 @@
     "body1": "Nous avons bien reçu votre don de {{amount}}.",
     "body2": "Votre soutien nous aide à poursuivre notre mission. Vous recevrez un reçu officiel sous peu.",
     "receiptNotice": "Un reçu fiscal vous sera envoyé par e-mail séparément."
+  },
+  "emails": {
+    "verification": {
+      "subject": "Vérifiez votre adresse e-mail",
+      "previewText": "Veuillez confirmer votre e-mail pour commencer.",
+      "title": "Bienvenue ! Veuillez vérifier votre e-mail",
+      "greeting": "Bonjour {{name}},",
+      "body": "Merci de vous être inscrit. Veuillez cliquer sur le bouton ci-dessous pour vérifier votre adresse e-mail et finaliser votre inscription. Ce lien est valable 24 heures.",
+      "button": "Vérifier l'adresse e-mail",
+      "footer": "Si vous n'avez pas demandé cet e-mail, vous pouvez l'ignorer en toute sécurité."
+    },
+    "passwordReset": {
+      "subject": "Réinitialisez votre mot de passe",
+      "previewText": "Une demande de réinitialisation de votre mot de passe a été faite.",
+      "title": "Demande de réinitialisation de mot de passe",
+      "greeting": "Bonjour {{name}},",
+      "body": "Nous avons reçu une demande de réinitialisation du mot de passe de votre compte. Cliquez sur le bouton ci-dessous pour définir un nouveau mot de passe. Ce lien est valable 1 heure.",
+      "button": "Réinitialiser le mot de passe",
+      "footer": "Si vous n'avez pas demandé de réinitialisation de mot de passe, vous pouvez ignorer cet e-mail en toute sécurité."
+    }
   }
 }
